@@ -8,35 +8,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F2F6F9; --bg2:#E2ECF2; --surface:#FFFFFF; --ink:#003252; --ink2:#4A6378; --line:#D2DEE7; --road:#003252; --roadline:#F2F6F9;
-  --b0:#004976; --b1:#1E7FC0; --b2:#97D700; --b3:#FFA400; --b4:#5B63D3; --b5:#57E2E5; --b6:#E0457B;
-  --sevL:#8FA9BD; --sevM:#FFA400; --sevG:#E03A45; --muted:#C3D3DE;
-  --b0i:#004976; --b1i:#1A6EA6; --b2i:#4F7A00; --b3i:#B06A00; --b4i:#4A51BF; --b5i:#0B7F86; --b6i:#C4336A;
-  --sevLi:#5F7F96; --sevMi:#B06A00; --sevGi:#D0303B;
-  --on-b0:#FFFFFF; --on-b1:#FFFFFF; --on-b2:#003252; --on-b3:#003252; --on-b4:#FFFFFF; --on-b5:#003252; --on-b6:#FFFFFF;
-  --hdr:#003252; --hdrInk:#FFFFFF; --hdrInk2:#9CC3DE;
-  --accent:var(--b0); --accentInk:var(--b0i); --onAccent:var(--on-b0);
+  --bg:#F4F7FA; --bg2:#E6EDF3; --surface:#FFFFFF; --ink:#003252; --ink2:#2F4F6B; --line:#D5E0E8; --road:#003252; --roadline:#F4F7FA; --muted:#C8D5DF;
+  /* azul neutro: interfaz y datos sin categoria */
+  --neu:#004976; --q1:#C2D8E8; --q2:#7FAACB; --q3:#2F6E9E; --q4:#003252; --onq1:#003252; --onq2:#003252; --onq3:#FFFFFF; --onq4:#FFFFFF;
+  /* severidad (constante): leve verde, moderada naranja, grave rojo */
+  --sevL:#97D700; --sevM:#FFA400; --sevG:#E03A45; --ok:#97D700;
+  /* tipos de vehiculo (constante) */
+  --tP:#2BBFC3; --tC:#7B61D9; --tB:#E0457B;
+  --b0:var(--neu); --b1:var(--neu); --b2:var(--neu); --b3:var(--neu); --b4:var(--neu); --b5:var(--neu); --b6:var(--neu);
+  --b0i:var(--ink); --b1i:var(--ink); --b2i:var(--ink); --b3i:var(--ink); --b4i:var(--ink); --b5i:var(--ink); --b6i:var(--ink); --sevLi:var(--ink); --sevMi:var(--ink); --sevGi:var(--ink);
+  --on-b0:#FFFFFF; --on-b1:#FFFFFF; --on-b2:#FFFFFF; --on-b3:#FFFFFF; --on-b4:#FFFFFF; --on-b5:#FFFFFF; --on-b6:#FFFFFF;
+  --hdr:#003252; --hdrInk:#FFFFFF;
+  --accent:var(--neu); --accentInk:var(--ink); --onAccent:#FFFFFF;
   box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#00243C; --bg2:#002C49; --surface:#003252; --ink:#EEF5FA; --ink2:#9CB6CA; --line:#0E4B72; --road:#001B2E; --roadline:#C9D9E5;
-    --b0:#6BB8E8; --b1:#3E9AD6; --b2:#97D700; --b3:#FFA400; --b4:#9298FF; --b5:#57E2E5; --b6:#FF6F9F;
-    --sevL:#7194AE; --sevM:#FFA400; --sevG:#FF5466; --muted:#164D72; --onAccent:#00243C;
-    --b0i:#6BB8E8; --b1i:#5BB0E6; --b2i:#97D700; --b3i:#FFA400; --b4i:#A3A8FF; --b5i:#57E2E5; --b6i:#FF7FA9;
-    --sevLi:#8FB0C8; --sevMi:#FFA400; --sevGi:#FF6676;
+    --bg:#00243C; --bg2:#002E4C; --surface:#003252; --ink:#FFFFFF; --ink2:#C9D9E5; --line:#13507A; --road:#001B2E; --roadline:#C9D9E5; --muted:#1C5580;
+    --neu:#5DA9DD; --q1:#1C5580; --q2:#2F78AE; --q3:#5DA9DD; --q4:#BFE0F5; --onq1:#FFFFFF; --onq2:#FFFFFF; --onq3:#00243C; --onq4:#00243C;
+    --sevL:#97D700; --sevM:#FFA400; --sevG:#FF5466; --ok:#97D700;
+    --tP:#57E2E5; --tC:#A08BFF; --tB:#FF7FA9;
+    --b0:var(--neu); --b1:var(--neu); --b2:var(--neu); --b3:var(--neu); --b4:var(--neu); --b5:var(--neu); --b6:var(--neu);
+    --b0i:var(--ink); --b1i:var(--ink); --b2i:var(--ink); --b3i:var(--ink); --b4i:var(--ink); --b5i:var(--ink); --b6i:var(--ink); --sevLi:var(--ink); --sevMi:var(--ink); --sevGi:var(--ink);
     --on-b0:#00243C; --on-b1:#00243C; --on-b2:#00243C; --on-b3:#00243C; --on-b4:#00243C; --on-b5:#00243C; --on-b6:#00243C;
-    --hdr:#001B2E; --hdrInk:#FFFFFF; --hdrInk2:#9CB6CA;
+    --hdr:#001B2E; --hdrInk:#FFFFFF; --onAccent:#00243C;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#00243C; --bg2:#002C49; --surface:#003252; --ink:#EEF5FA; --ink2:#9CB6CA; --line:#0E4B72; --road:#001B2E; --roadline:#C9D9E5;
-  --b0:#6BB8E8; --b1:#3E9AD6; --b2:#97D700; --b3:#FFA400; --b4:#9298FF; --b5:#57E2E5; --b6:#FF6F9F;
-  --sevL:#7194AE; --sevM:#FFA400; --sevG:#FF5466; --muted:#164D72; --onAccent:#00243C;
-  --b0i:#6BB8E8; --b1i:#5BB0E6; --b2i:#97D700; --b3i:#FFA400; --b4i:#A3A8FF; --b5i:#57E2E5; --b6i:#FF7FA9;
-  --sevLi:#8FB0C8; --sevMi:#FFA400; --sevGi:#FF6676;
+  --bg:#00243C; --bg2:#002E4C; --surface:#003252; --ink:#FFFFFF; --ink2:#C9D9E5; --line:#13507A; --road:#001B2E; --roadline:#C9D9E5; --muted:#1C5580;
+  --neu:#5DA9DD; --q1:#1C5580; --q2:#2F78AE; --q3:#5DA9DD; --q4:#BFE0F5; --onq1:#FFFFFF; --onq2:#FFFFFF; --onq3:#00243C; --onq4:#00243C;
+  --sevL:#97D700; --sevM:#FFA400; --sevG:#FF5466; --ok:#97D700;
+  --tP:#57E2E5; --tC:#A08BFF; --tB:#FF7FA9;
+  --b0:var(--neu); --b1:var(--neu); --b2:var(--neu); --b3:var(--neu); --b4:var(--neu); --b5:var(--neu); --b6:var(--neu);
+  --b0i:var(--ink); --b1i:var(--ink); --b2i:var(--ink); --b3i:var(--ink); --b4i:var(--ink); --b5i:var(--ink); --b6i:var(--ink); --sevLi:var(--ink); --sevMi:var(--ink); --sevGi:var(--ink);
   --on-b0:#00243C; --on-b1:#00243C; --on-b2:#00243C; --on-b3:#00243C; --on-b4:#00243C; --on-b5:#00243C; --on-b6:#00243C;
-  --hdr:#001B2E; --hdrInk:#FFFFFF; --hdrInk2:#9CB6CA;
+  --hdr:#001B2E; --hdrInk:#FFFFFF; --onAccent:#00243C;
 }
 *{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
@@ -47,9 +53,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .app{display:grid;grid-template-rows:auto 1fr auto;height:100%}
 
 /* top bar */
-.top{display:flex;align-items:center;gap:14px;padding:12px 24px;background:var(--hdr);color:var(--hdrInk);border-bottom:4px solid #97D700}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-family:Montserrat,sans-serif;font-size:18px;letter-spacing:-.2px}
-.brand small{font-family:Inter,sans-serif;font-weight:500;color:#97D700;font-size:14px;margin-left:6px;padding-left:12px;border-left:2px solid #97D700}
+.top{display:flex;align-items:center;gap:14px;padding:10px 24px;background:var(--hdr);color:var(--hdrInk);border-bottom:4px solid #97D700}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-family:Montserrat,sans-serif;font-size:18px;letter-spacing:-.2px}
+.brand .iso{width:48px;height:48px;flex:none}
+.brand .bt{display:flex;flex-direction:column;line-height:1.05;text-transform:uppercase;font-size:16px;letter-spacing:.2px}
+.brand .bt span{font-weight:600;font-size:11.5px;letter-spacing:1.6px;opacity:.85}
+.brand small{font-family:Inter,sans-serif;font-weight:500;color:rgba(255,255,255,.78);font-size:14px;margin-left:8px;padding-left:14px;border-left:2px solid #97D700}
 .spacer{flex:1}
 .tbtn{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px}
 .tbtn:hover{border-color:var(--accent)}
@@ -82,7 +91,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .big{font-family:Montserrat,sans-serif;font-weight:800;line-height:1;letter-spacing:-.5px;color:var(--accentInk)}
 .lead{font-size:20px;line-height:1.4;max-width:62ch}
 .note{font-size:14px;color:var(--ink2);max-width:75ch}
-.callout{border-left:5px solid #97D700;background:color-mix(in srgb,var(--accent) 10%,var(--surface));padding:14px 18px;border-radius:0 14px 14px 0;font-size:19px;font-weight:600;line-height:1.35}
+.callout{border-left:5px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface));padding:14px 18px;border-radius:0 14px 14px 0;font-size:19px;font-weight:600;line-height:1.35}
 .seg{display:inline-flex;background:var(--bg2);border-radius:999px;padding:4px;gap:2px;flex-wrap:wrap}
 .seg button{border:none;background:none;padding:6px 14px;border-radius:999px;font-weight:600;font-size:14px;color:var(--ink2)}
 .seg button.on{background:var(--accent);color:var(--onAccent)}
@@ -139,9 +148,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .intro .sub{font-size:22px;color:var(--ink2);margin:10px 0 18px;font-family:Montserrat,sans-serif;font-weight:600}
 .roadimg{width:100%;border-radius:18px;display:block;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%);mask-image:linear-gradient(to bottom,transparent 0,#000 18%)}
 .mini6{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.mini6 button{border:none;border-radius:14px;padding:12px;color:var(--onAccent);text-align:left;font:700 15px/1.15 Montserrat,sans-serif;display:flex;gap:10px;align-items:center;transition:transform .2s}
-.mini6 button:hover{transform:translateY(-3px)}
-.mini6 b{font-size:30px}
+.mini6 button{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:12px;color:var(--ink);text-align:left;font:700 15px/1.15 Montserrat,sans-serif;display:flex;gap:10px;align-items:center;transition:transform .2s}
+.mini6 button:hover{transform:translateY(-3px);border-color:var(--accent)}
+.mini6 b{font-size:30px;color:var(--accent)}
+.sw::before{content:"";display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--c);margin-right:.3em;vertical-align:.05em}
 
 /* anatomy */
 .anat svg{width:100%;height:auto}
@@ -173,8 +183,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .tl .dot{position:absolute;top:48px;width:34px;height:34px;margin-left:-17px;border-radius:50%;background:var(--accent);border:4px solid var(--surface);box-shadow:0 2px 6px rgba(0,0,0,.3);transition:left .2s}
 input[type=range]{width:100%;accent-color:var(--accent);height:30px}
 .pill{display:inline-block;padding:5px 12px;border-radius:999px;font-weight:700;font-size:14px}
-.ok{background:color-mix(in srgb,var(--b2) 22%,var(--surface));color:var(--b2i)}
-.no{background:color-mix(in srgb,var(--b3) 18%,var(--surface));color:var(--b3i)}
+.ok{background:color-mix(in srgb,var(--ok) 28%,var(--surface));color:var(--ink)}
+.no{background:color-mix(in srgb,var(--sevG) 20%,var(--surface));color:var(--ink)}
 .pend{background:var(--bg2);color:var(--ink2);border:1px dashed var(--ink2)}
 
 table.t{border-collapse:collapse;width:100%;font-size:15px}
@@ -212,7 +222,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 .stairCar{position:absolute;width:72px;height:45px;left:20px;bottom:14px;opacity:0;transition:left 1s cubic-bezier(.5,0,.2,1),bottom 1s cubic-bezier(.5,0,.2,1),color .5s;z-index:3;filter:drop-shadow(0 3px 4px rgba(0,0,0,.3))}
 .boom{position:absolute;font-size:64px;opacity:0;transform:scale(.2);transition:all .4s cubic-bezier(.3,1.6,.5,1);z-index:4}
 .boom.on{opacity:1;transform:scale(1)}
-.shield{position:absolute;display:flex;align-items:center;gap:6px;background:var(--b2);color:#003252;font-weight:800;padding:6px 12px 6px 8px;border-radius:999px;opacity:0;transform:scale(.3);transition:all .4s cubic-bezier(.3,1.6,.5,1);z-index:4}
+.shield{position:absolute;display:flex;align-items:center;gap:6px;background:var(--ok);color:#003252;font-weight:800;padding:6px 12px 6px 8px;border-radius:999px;opacity:0;transform:scale(.3);transition:all .4s cubic-bezier(.3,1.6,.5,1);z-index:4}
 .shield.on{opacity:1;transform:scale(1)}
 .actors{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .actors div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:13px;line-height:1.2;display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -249,9 +259,9 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 .sevrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .sevc{background:var(--surface);border:1px solid var(--line);border-top:8px solid var(--c);border-radius:16px;padding:16px 18px}
 .sevc .cnt{font-size:52px!important}.sevc p{font-size:16px!important}
-.sevbar{display:flex;height:46px;border-radius:12px;overflow:hidden;margin-top:16px;background:var(--bg2)}.sevbar div{transition:flex-basis 1.2s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;overflow:hidden;white-space:nowrap}.sevbar span{color:#fff;font-weight:700;font-size:14px;padding:0 10px}.sevbar div:nth-child(2) span{color:#003252}
+.sevbar{display:flex;height:46px;border-radius:12px;overflow:hidden;margin-top:16px;background:var(--bg2)}.sevbar div{transition:flex-basis 1.2s cubic-bezier(.2,.8,.2,1);display:flex;align-items:center;overflow:hidden;white-space:nowrap}.sevbar span{color:#fff;font-weight:700;font-size:14px;padding:0 10px}.sevbar div:nth-child(-n+2) span{color:#003252}
 .sevc .sh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.sevc .lvl{font:800 24px Montserrat,sans-serif;color:var(--c)}
+.sevc .lvl{font:800 24px Montserrat,sans-serif;color:var(--ink)}
 .sevc .cnt{font-size:36px;color:var(--ink)}
 .sevc p{margin:4px 0 0;font-size:14.5px}
 .sevc .ex{color:var(--ink2);font-size:13.5px}
@@ -259,7 +269,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 .gctl{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 10px}
 .gbtn{border:none;border-radius:999px;padding:11px 22px;font:800 20px Montserrat,sans-serif;color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.25);transition:transform .1s}
 .gbtn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
-.gbtn.bad{background:var(--sevG)}.gbtn.good{background:var(--b2);color:#003252}
+.gbtn.bad{background:var(--sevG)}.gbtn.good{background:var(--ok);color:#003252}
 .gbtn:disabled{opacity:.5;cursor:default}
 .game{position:relative;height:calc(100vh - 380px);min-height:380px;max-height:620px;border-radius:20px;overflow:hidden;background:linear-gradient(#BDE7F5,#EEF8FC 70%);border:1px solid var(--line)}
 :root[data-theme="dark"] .game{background:linear-gradient(#001B2E,#004976 70%)}
@@ -275,7 +285,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 .glane{position:absolute;left:0;right:0;top:50px;height:6px;background:repeating-linear-gradient(90deg,#F5F7FA 0 50px,transparent 50px 100px)}
 .game.moving .glane{animation:lane .5s linear infinite}
 @keyframes lane{to{background-position:-100px 0}}
-.gcar{position:absolute;bottom:34px;left:3%;width:230px;color:var(--b1i);transition:left 1.8s cubic-bezier(.45,0,.55,1),transform .5s;z-index:5}
+.gcar{position:absolute;bottom:34px;left:3%;width:230px;color:var(--tP);transition:left 1.8s cubic-bezier(.45,0,.55,1),transform .5s;z-index:5}
 .gsvg{display:block;filter:drop-shadow(0 6px 4px rgba(0,0,0,.25))}
 .game.moving .gcar .wh{animation:spin .4s linear infinite;transform-box:fill-box;transform-origin:center}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -285,25 +295,25 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 .gwrench{position:absolute;bottom:80px;left:86px;font-size:60px;opacity:0;transition:opacity .3s}
 .gwrench.on{opacity:1;animation:wrench .4s ease-in-out infinite alternate}
 @keyframes wrench{from{transform:rotate(-35deg)}to{transform:rotate(25deg)}}
-.gother{position:absolute;bottom:34px;left:110%;color:var(--sevLi);transform:scaleX(-1);transition:left 1.4s cubic-bezier(.3,0,.6,1);z-index:4}
+.gother{position:absolute;bottom:34px;left:110%;color:#8FA9BD;transform:scaleX(-1);transition:left 1.4s cubic-bezier(.3,0,.6,1);z-index:4}
 .gstation{position:absolute;left:52%;bottom:104px;width:150px;text-align:center;transition:opacity .5s,filter .5s;z-index:2}
 .gstation.off{opacity:.25;filter:grayscale(1)}
-.gsign{display:inline-block;background:var(--b5);color:#003252;font:800 22px Montserrat,sans-serif;padding:2px 14px;border-radius:8px;margin-bottom:4px;transition:box-shadow .3s}
-.gstation.glow .gsign{box-shadow:0 0 0 6px rgba(87,226,229,.35),0 0 24px var(--b5)}
+.gsign{display:inline-block;background:var(--b5);color:var(--onAccent);font:800 22px Montserrat,sans-serif;padding:2px 14px;border-radius:8px;margin-bottom:4px;transition:box-shadow .3s}
+.gstation.glow .gsign{box-shadow:0 0 0 6px rgba(93,169,221,.35),0 0 24px var(--b5)}
 .gbody{height:74px;background:var(--surface);border:3px solid var(--b5);border-bottom:none;border-radius:10px 10px 0 0;position:relative}
 .gdoor{position:absolute;left:50%;bottom:0;width:70px;margin-left:-35px;height:50px;background:repeating-linear-gradient(#9CB6CA 0 6px,#C9D9E5 6px 12px);border-radius:4px 4px 0 0}
 .glabel{position:absolute;top:-26px;left:0;right:0;font-size:12.5px;font-weight:700;color:var(--ink2)}
 .gmsg{position:absolute;left:18px;top:14px;max-width:52%;font:700 24px/1.2 Montserrat,sans-serif;color:#003252;background:rgba(255,255,255,.85);padding:10px 16px;border-radius:14px;z-index:6}
 .gscore{position:absolute;right:16px;top:14px;display:flex;gap:16px;background:rgba(255,255,255,.85);padding:8px 14px;border-radius:14px;z-index:6;color:#003252}
 .gscore div{display:flex;flex-direction:column;align-items:center}
-.gscore .big{font-size:30px;color:#0B7F86}
+.gscore .big{font-size:30px;color:#003252}
 .gscore .note{font-size:11.5px;color:#4A6378}
 .gmeter{position:absolute;right:16px;top:96px;background:rgba(255,255,255,.85);padding:8px 12px;border-radius:12px;z-index:6;color:#003252}
 .gmeter .note{color:#4A6378;font-size:12px}
 .gm{display:flex;gap:4px}
 .gm i{font-style:normal;font-size:13px;font-weight:700;padding:6px 10px;border-radius:8px;background:#E2ECF2;color:#8FA9BD;transition:all .3s}
-.gm i.on[data-l="L"]{background:var(--sevL);color:#fff}.gm i.on[data-l="M"]{background:var(--sevM);color:#003252}.gm i.on[data-l="G"]{background:var(--sevG);color:#fff;animation:blink .6s infinite alternate}
-.gm.ok i{background:#E6F5C2;color:#4F7A00}
+.gm i.on[data-l="L"]{background:var(--sevL);color:#003252}.gm i.on[data-l="M"]{background:var(--sevM);color:#003252}.gm i.on[data-l="G"]{background:var(--sevG);color:#fff;animation:blink .6s infinite alternate}
+.gm.ok i{background:#E6F5C2;color:#003252}
 @keyframes blink{to{opacity:.55}}
 .gboom{position:absolute;bottom:70px;left:76%;font-size:120px;transform:scale(0);opacity:0;transition:all .35s cubic-bezier(.3,1.6,.5,1);z-index:7;pointer-events:none}
 .gboom.on{transform:scale(1);opacity:1}
@@ -338,8 +348,8 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 <div class="app">
   <header class="top">
     <div class="brand">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="17" width="5" height="11" rx="1.5" fill="#57E2E5"/><rect x="9" y="12" width="5" height="16" rx="1.5" fill="#6BB8E8"/><rect x="16" y="7" width="5" height="21" rx="1.5" fill="#FFA400"/><rect x="23" y="2" width="5" height="26" rx="1.5" fill="#97D700"/></svg>
-      Observatorio de Seguridad Vehicular <small>Primer semestre 2026, Provincia de Santa Fe</small>
+      <svg class="iso" viewBox="-200 -200 400 400" aria-hidden="true"><defs><linearGradient id="isoG" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#5A9478"/><stop offset=".5" stop-color="#8AA2BA"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient></defs><path fill="url(#isoG)" fill-rule="evenodd" d="M-178 0a178 178 0 1 0 356 0a178 178 0 1 0 -356 0ZM-108 -2a118 118 0 1 0 236 0a118 118 0 1 0 -236 0Z"/><g fill="#97D700"><g transform="rotate(0)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g><g transform="rotate(45)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g><g transform="rotate(90)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g><g transform="rotate(135)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g><g transform="rotate(180)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g><g transform="rotate(225)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g><g transform="rotate(270)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g><g transform="rotate(315)"><rect x="-22" y="-60.5" width="44" height="121" transform="translate(0 -137) rotate(45)"/></g></g></svg>
+      <span class="bt"><span>Observatorio de</span>Seguridad Vehicular</span><small>Primer semestre 2026, Provincia de Santa Fe</small>
     </div>
     <div class="spacer"></div>
     <button class="tbtn" id="btnInfo" title="Ver infografía del informe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg>Infografía</button>
@@ -383,12 +393,12 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
           <div>
             <p class="lead">De cada <b>100 inspecciones</b> del semestre, así se reparte el uso de los vehículos:</p>
             <div class="waffle" id="wUso" style="max-width:460px"></div>
-            <div class="legend" style="margin-top:12px"><span><i style="background:var(--b1)"></i>Particular</span><span><i style="background:var(--b3)"></i>Carga</span><span><i style="background:var(--b4)"></i>Pasajeros</span></div>
+            <div class="legend" style="margin-top:12px"><span><i style="background:var(--tP)"></i>Particular</span><span><i style="background:var(--tC)"></i>Carga</span><span><i style="background:var(--tB)"></i>Pasajeros</span></div>
           </div>
           <div style="display:flex;flex-direction:column;gap:14px">
-            <div class="card row" style="gap:18px"><svg width="80" height="50" style="color:var(--b1i)"><use href="#car"/></svg><div><div class="big" style="font-size:52px;color:var(--b1i)">92,6%</div><div>Particular: <b>207.608</b> inspecciones</div></div></div>
-            <div class="card row" style="gap:18px"><svg width="80" height="50" style="color:var(--b3i)"><use href="#truck"/></svg><div><div class="big" style="font-size:52px;color:var(--b3i)">6,5%</div><div>Carga: <b>14.544</b> inspecciones</div></div></div>
-            <div class="card row" style="gap:18px"><svg width="80" height="50" style="color:var(--b4i)"><use href="#bus"/></svg><div><div class="big" style="font-size:52px;color:var(--b4i)">1,0%</div><div>Pasajeros: <b>2.154</b> inspecciones</div></div></div>
+            <div class="card row" style="gap:18px"><svg width="80" height="50" style="color:var(--tP)"><use href="#car"/></svg><div><div class="big" style="font-size:52px;color:var(--b1i)">92,6%</div><div>Particular: <b>207.608</b> inspecciones</div></div></div>
+            <div class="card row" style="gap:18px"><svg width="80" height="50" style="color:var(--tC)"><use href="#truck"/></svg><div><div class="big" style="font-size:52px;color:var(--b3i)">6,5%</div><div>Carga: <b>14.544</b> inspecciones</div></div></div>
+            <div class="card row" style="gap:18px"><svg width="80" height="50" style="color:var(--tB)"><use href="#bus"/></svg><div><div class="big" style="font-size:52px;color:var(--b4i)">1,0%</div><div>Pasajeros: <b>2.154</b> inspecciones</div></div></div>
             <div class="callout">Más de 9 de cada 10 inspecciones son de uso particular. Por eso, a partir de acá, cada indicador se mira también por tipo de uso.</div>
           </div>
         </div>
@@ -399,7 +409,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
             <div class="seg" id="segEdad"><button class="on" data-k="Total">Total</button><button data-k="Particular">Particular</button><button data-k="Carga">Carga</button><button data-k="Pasajeros">Pasajeros</button></div>
             <p class="lead" id="edadLead" style="margin:14px 0 10px"></p>
             <div class="waffle" id="wEdad"></div>
-            <div class="legend" style="margin-top:12px"><span><i style="background:#57E2E5"></i>0–3 años</span><span><i style="background:#7DBFEA"></i>4–5 años</span><span><i style="background:var(--b1)"></i>6–10 años</span><span><i style="background:var(--b0)"></i>Más de 10 años</span></div>
+            <div class="legend" style="margin-top:12px"><span><i style="background:var(--q1)"></i>0–3 años</span><span><i style="background:var(--q2)"></i>4–5 años</span><span><i style="background:var(--q3)"></i>6–10 años</span><span><i style="background:var(--q4)"></i>Más de 10 años</span></div>
           </div>
           <div style="display:flex;flex-direction:column;gap:14px">
             <div class="bars" id="barsEdad"></div>
@@ -525,9 +535,9 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
             <p class="lead">De <b>238.306</b> anomalías técnicas, así se distribuye la severidad:</p>
             <svg id="sevStack" viewBox="0 0 600 150" style="width:100%"></svg>
             <div class="grid3" style="margin-top:10px">
-              <div class="card"><div class="big" style="font-size:44px;color:var(--sevLi)">173.471</div><div>Leves · 72,8%</div></div>
-              <div class="card"><div class="big" style="font-size:44px;color:var(--sevMi)">59.256</div><div>Moderadas · 24,9%</div></div>
-              <div class="card"><div class="big" style="font-size:44px;color:var(--sevGi)">5.551</div><div>Graves · 2,3%</div></div>
+              <div class="card" style="border-top:6px solid var(--sevL)"><div class="big" style="font-size:44px">173.471</div><div>Leves · 72,8%</div></div>
+              <div class="card" style="border-top:6px solid var(--sevM)"><div class="big" style="font-size:44px">59.256</div><div>Moderadas · 24,9%</div></div>
+              <div class="card" style="border-top:6px solid var(--sevG)"><div class="big" style="font-size:44px">5.551</div><div>Graves · 2,3%</div></div>
             </div>
             <p class="note">28 registros sin clasificación de severidad.</p>
           </div>
@@ -566,7 +576,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
         <div class="grid2">
           <div><p class="lead">Vehículos según cantidad de anomalías Graves acumuladas (3.532 con al menos una)</p><svg id="histG" viewBox="0 0 600 300" style="width:100%"></svg></div>
           <div style="display:flex;flex-direction:column;gap:14px">
-            <div class="card"><div class="big" style="font-size:96px;color:var(--sevGi)" data-count="1159">0</div><div style="font-size:18px">vehículos registraron dos o más anomalías Graves: el 32,8% de los que tuvieron al menos una.</div></div>
+            <div class="card" style="border-top:6px solid var(--sevG)"><div class="big" style="font-size:96px" data-count="1159">0</div><div style="font-size:18px">vehículos registraron dos o más anomalías Graves: el 32,8% de los que tuvieron al menos una.</div></div>
             <p class="note">Acumulación semestral por dominio; puede incluir reinspecciones.</p>
           </div>
         </div>
@@ -574,13 +584,13 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
       <div class="panel">
         <p class="lead" style="margin:0 0 12px">Cuatro números resumen el riesgo. Se leen respondiendo dos preguntas para cada tipo de falla:</p>
         <div class="mx">
-          <div></div><div class="mh" style="color:var(--sevMi)">Fallas Moderadas o Graves</div><div class="mh" style="color:var(--sevGi)">Fallas Graves</div>
+          <div></div><div class="mh sw" style="--c:var(--sevM)">Fallas Moderadas o Graves</div><div class="mh sw" style="--c:var(--sevG)">Fallas Graves</div>
           <div class="mq"><b>¿Cuántos vehículos las tienen?</b><span class="note">Qué tan extendido está el problema</span></div>
-          <div class="kpi mc" style="border-top-color:var(--sevM)"><div class="v" style="color:var(--sevMi)"><span data-count="13.3" data-dec="1">0</span><small> de cada 100</small></div><p class="tx">Unos <b>13 de cada 100 vehículos</b> tienen al menos una falla moderada o grave.</p><span class="tag">I-MG · Incidencia M/G</span></div>
-          <div class="kpi mc" style="border-top-color:var(--sevG)"><div class="v" style="color:var(--sevGi)"><span data-count="1.7" data-dec="1">0</span><small> de cada 100</small></div><p class="tx"><b>Casi 2 de cada 100 vehículos</b> tienen al menos una falla grave.</p><span class="tag">I-G · Incidencia Grave</span></div>
+          <div class="kpi mc" style="border-top-color:var(--sevM)"><div class="v"><span data-count="13.3" data-dec="1">0</span><small> de cada 100</small></div><p class="tx">Unos <b>13 de cada 100 vehículos</b> tienen al menos una falla moderada o grave.</p><span class="tag">I-MG · Incidencia M/G</span></div>
+          <div class="kpi mc" style="border-top-color:var(--sevG)"><div class="v"><span data-count="1.7" data-dec="1">0</span><small> de cada 100</small></div><p class="tx"><b>Casi 2 de cada 100 vehículos</b> tienen al menos una falla grave.</p><span class="tag">I-G · Incidencia Grave</span></div>
           <div class="mq"><b>¿Cuántas fallas hay en total?</b><span class="note">Qué tan concentrado está</span></div>
-          <div class="kpi mc" style="border-top-color:var(--sevM)"><div class="v" style="color:var(--sevMi)"><span data-count="32" data-dec="1">0</span><small> cada 100 vehículos</small></div><p class="tx">Se registran <b>32 fallas moderadas o graves</b> cada 100 vehículos: quien tiene una, suele tener más (2,4 en promedio).</p><span class="tag">D-MG · Densidad M/G</span></div>
-          <div class="kpi mc" style="border-top-color:var(--sevG)"><div class="v" style="color:var(--sevGi)"><span data-count="2.7" data-dec="1">0</span><small> cada 100 vehículos</small></div><p class="tx">Se registran <b>2,7 fallas graves</b> cada 100 vehículos: 1,6 por cada vehículo con falla grave.</p><span class="tag">D-G · Densidad Grave</span></div>
+          <div class="kpi mc" style="border-top-color:var(--sevM)"><div class="v"><span data-count="32" data-dec="1">0</span><small> cada 100 vehículos</small></div><p class="tx">Se registran <b>32 fallas moderadas o graves</b> cada 100 vehículos: quien tiene una, suele tener más (2,4 en promedio).</p><span class="tag">D-MG · Densidad M/G</span></div>
+          <div class="kpi mc" style="border-top-color:var(--sevG)"><div class="v"><span data-count="2.7" data-dec="1">0</span><small> cada 100 vehículos</small></div><p class="tx">Se registran <b>2,7 fallas graves</b> cada 100 vehículos: 1,6 por cada vehículo con falla grave.</p><span class="tag">D-G · Densidad Grave</span></div>
         </div>
         <div class="callout" style="margin-top:14px">La primera fila dice <b>a cuántos vehículos</b> alcanza el problema; la segunda, <b>cuántas fallas</b> se acumulan. Si en el próximo semestre baja la primera, hay menos vehículos riesgosos; si baja la segunda, hay menos fallas en la calle.</div>
       </div>
@@ -603,8 +613,8 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
             <div class="row"><span class="big" style="font-size:72px" id="ageV">12</span><span style="font-size:22px">años</span></div>
             <input type="range" id="ageR" min="3" max="35" value="12" step="1">
             <div class="grid3" style="grid-template-columns:1fr 1fr;gap:12px">
-              <div class="card"><div class="big" style="font-size:50px;color:var(--sevMi)" id="ageMG">0</div><div>con M/G cada 100</div></div>
-              <div class="card"><div class="big" style="font-size:50px;color:var(--sevGi)" id="ageG">0</div><div>con Grave cada 100</div></div>
+              <div class="card" style="border-top:6px solid var(--sevM)"><div class="big" style="font-size:50px" id="ageMG">0</div><div>con M/G cada 100</div></div>
+              <div class="card" style="border-top:6px solid var(--sevG)"><div class="big" style="font-size:50px" id="ageG">0</div><div>con Grave cada 100</div></div>
             </div>
             <div class="callout" id="ageMsg"></div>
             <p class="note">Apertura anual del Observatorio con la misma metodología del Bloque 4 (202.768 vehículos). 3 = 0 a 3 años; 35 = 35 años o más. Asociación observada, no causalidad.</p>
@@ -643,7 +653,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
           <div class="sevc" style="--c:var(--sevG)"><div class="sh"><span class="lvl">Grave</span><span class="big cnt" data-count="3532">0</span><span class="note">vehículos</span></div><p>Riesgo alto e inmediato para la circulación.</p><p class="ex"><b>Más frecuentes:</b> freno de servicio, freno de estacionamiento, luces de stop.</p><p class="tot">5.551 fallas graves registradas en todo el parque</p></div>
         </div>
         <div class="sevbar" id="sevBar"></div>
-        <div class="callout" style="margin-top:12px">Sumados dan 96.548 vehículos. Una falla puede subir de escalón con el tiempo: <b style="color:var(--sevLi)">Leve</b> → <b style="color:var(--sevMi)">Moderada</b> → <b style="color:var(--sevGi)">Grave</b>. La RTO la detecta antes de que llegue arriba.</div>
+        <div class="callout" style="margin-top:12px">Sumados dan 96.548 vehículos. Una falla puede subir de escalón con el tiempo: <b class="sw" style="--c:var(--sevL)">Leve</b> → <b class="sw" style="--c:var(--sevM)">Moderada</b> → <b class="sw" style="--c:var(--sevG)">Grave</b>. La RTO la detecta antes de que llegue arriba.</div>
       </div>
 
       <div class="panel">
@@ -658,7 +668,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
           <div class="gcloud" style="top:18px;animation-duration:60s">☁️</div><div class="gcloud" style="top:56px;animation-duration:85s;animation-delay:-30s;font-size:30px">☁️</div>
           <div class="gskyline"></div>
           <div class="gmsg" id="gMsg">Elegí una falla y tocá <b>Sin RTO</b> o <b>Con RTO</b>.</div>
-          <div class="gscore"><div><span class="big" id="gSaved">0</span><span class="note">siniestros evitados en esta demo</span></div><div><span class="big" id="gUsd" style="color:#4F7A00">US$ 0</span><span class="note">costo social ahorrado</span></div></div>
+          <div class="gscore"><div><span class="big" id="gSaved">0</span><span class="note">siniestros evitados en esta demo</span></div><div><span class="big" id="gUsd" style="color:#003252">US$ 0</span><span class="note">costo social ahorrado</span></div></div>
           <div class="gmeter"><div class="note" style="margin-bottom:4px">Severidad de la falla</div><div class="gm"><i data-l="L">Leve</i><i data-l="M">Moderada</i><i data-l="G">Grave</i></div></div>
           <div class="gstation" id="gStation"><div class="gsign">RTO</div><div class="gbody"><div class="gdoor"></div></div><div class="glabel" id="gStLabel">Taller de RTO</div></div>
           <div class="groad"><div class="glane"></div></div>
@@ -786,7 +796,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
   </main>
 
   <nav class="roadnav" aria-label="Recorrido de la presentación">
-    <svg class="carnav" id="carnav" viewBox="0 0 74 34" aria-hidden="true"><rect x="4" y="5" width="62" height="24" rx="9" fill="#fff"/><rect x="40" y="8" width="14" height="18" rx="4" fill="#57E2E5"/><rect x="14" y="8" width="18" height="18" rx="4" fill="#57E2E5"/><rect x="64" y="7" width="6" height="5" rx="2" fill="#FFE27A"/><rect x="64" y="22" width="6" height="5" rx="2" fill="#FFE27A"/><rect x="1" y="7" width="4" height="5" rx="1" fill="#F04A4A"/><rect x="1" y="22" width="4" height="5" rx="1" fill="#F04A4A"/></svg>
+    <svg class="carnav" id="carnav" viewBox="0 0 74 34" aria-hidden="true"><rect x="4" y="5" width="62" height="24" rx="9" fill="#fff"/><rect x="40" y="8" width="14" height="18" rx="4" fill="#BFE0F5"/><rect x="14" y="8" width="18" height="18" rx="4" fill="#BFE0F5"/><rect x="64" y="7" width="6" height="5" rx="2" fill="#FFE27A"/><rect x="64" y="22" width="6" height="5" rx="2" fill="#FFE27A"/><rect x="1" y="7" width="4" height="5" rx="1" fill="#F04A4A"/><rect x="1" y="22" width="4" height="5" rx="1" fill="#F04A4A"/></svg>
     <div class="stops" id="stops"></div>
   </nav>
 </div>
@@ -865,7 +875,7 @@ const NOTES=[
 const stops=$('#stops');
 scenes.forEach((s,i)=>{const b=document.createElement('button');b.className='stop';const c=`var(--${s.dataset.color})`;
   b.innerHTML=`<span class="pin" style="background:${c};color:var(--on-${s.dataset.color})">${i==0?'▶':i==7?'★':i}</span><span class="t">${s.dataset.name}</span>`;b.onclick=()=>go(i,0);stops.appendChild(b)});
-const mini=$('#mini6');['El parque','Lo que conocemos','El riesgo','Factores asociados','Siniestros evitados','Conclusión'].forEach((n,i)=>{const b=document.createElement('button');b.style.background=`var(--b${i+1})`;b.style.color=`var(--on-b${i+1})`;b.innerHTML=`<b>${i+1}</b>${n}`;b.onclick=()=>go(i+1,0);mini.appendChild(b)});
+const mini=$('#mini6');['El parque','Lo que conocemos','El riesgo','Factores asociados','Siniestros evitados','Conclusión'].forEach((n,i)=>{const b=document.createElement('button');b.innerHTML=`<b>${i+1}</b>${n}`;b.onclick=()=>go(i+1,0);mini.appendChild(b)});
 
 scenes.forEach((s,si)=>{const tabs=[...s.querySelectorAll('.tab')];const panels=[...s.querySelectorAll('.panel')];
   tabs.forEach((t,ti)=>{t.setAttribute('role','tab');t.onclick=()=>setTab(si,ti)});s._tabs=tabs;s._panels=panels});
@@ -906,8 +916,8 @@ inits.s0=()=>{const o=$('#odo');o.innerHTML='';const str='224.306';[...str].forE
   scenes[0].querySelectorAll('[data-count]').forEach(countUp)};
 
 /* ---------- SCENE 1 ---------- */
-inits['1-0']=()=>waffle($('#wUso'),[[93,css('--b1'),'car'],[6,css('--b3'),'truck'],[1,css('--b4'),'bus']]);
-function edad(k){const c=['#57E2E5','#7DBFEA',css('--b1'),css('--b0')];waffle($('#wEdad'),D.edadW[k].map((n,i)=>[n,c[i]]),k=='Carga'?'truck':k=='Pasajeros'?'bus':'car');
+inits['1-0']=()=>waffle($('#wUso'),[[93,css('--tP'),'car'],[6,css('--tC'),'truck'],[1,css('--tB'),'bus']]);
+function edad(k){const c=[css('--q1'),css('--q2'),css('--q3'),css('--q4')];waffle($('#wEdad'),D.edadW[k].map((n,i)=>[n,c[i]]),k=='Carga'?'truck':k=='Pasajeros'?'bus':'car');
   bars($('#barsEdad'),['0–3 años','4–5 años','6–10 años','Más de 10 años'].map((l,i)=>[l,D.edadN[k][i],D.edad[k][i]]),{fmt:it=>fmt(it[2],1)+'%',color:(it,i)=>c[i]});
   $('#edadLead').innerHTML=k=='Total'?'<b>61,5%</b> de los 202.773 vehículos observados supera los 10 años.':`En ${k}, <b>${fmt(D.edad[k][3],1)}%</b> supera los 10 años.`;
   $('#edadStats').innerHTML=k=='Total'?['Particular','Carga','Pasajeros'].map(t=>`<div class="card">${ico({Particular:'car',Carga:'truck',Pasajeros:'bus'}[t],{Particular:'var(--b1)',Carga:'var(--b3)',Pasajeros:'var(--b4)'}[t])}<div class="big" style="font-size:40px">${fmt(D.edadS[t][0],1)}</div><div class="note">años promedio · ${t}</div></div>`).join(''):
@@ -950,7 +960,7 @@ function drawMap(){const s=$('#map');s.innerHTML='';const rows=filtered().filter
       const c=el('circle',{cx:x,cy:y,r:0,class:'lc',fill,'fill-opacity':mapK=='veh'?.85:big?.62:.9,stroke:r[0]==selLoc?css('--ink'):'#fff','stroke-width':r[0]==selLoc?.5:.12},s);
       requestAnimationFrame(()=>c.setAttribute('r',rad));
       if(mapK=='veh'&&r[3]>r[2]&&rad>.5){const f=(r[3]-r[2])/r[3],an=f*2*Math.PI,x1=x+rad*Math.sin(an),y1=y-rad*Math.cos(an);
-        const w=el('path',{d:`M${x},${y}L${x},${y-rad}A${rad},${rad} 0 ${f>.5?1:0} 1 ${x1},${y1}Z`,fill:css('--b3'),'pointer-events':'none',opacity:0,style:'transition:opacity .6s .5s'},s);requestAnimationFrame(()=>w.setAttribute('opacity',1))}
+        const w=el('path',{d:`M${x},${y}L${x},${y-rad}A${rad},${rad} 0 ${f>.5?1:0} 1 ${x1},${y1}Z`,fill:css('--q1'),'pointer-events':'none',opacity:0,style:'transition:opacity .6s .5s'},s);requestAnimationFrame(()=>w.setAttribute('opacity',1))}
       if(mapK=='insp'){const rv=.22+Math.sqrt(r[2]/vmax)*5.6;const c2=el('circle',{cx:x,cy:y,r:rv,fill:'none',stroke:css('--b1'),'stroke-width':.18,'stroke-dasharray':'.5 .4','pointer-events':'none'},s)}
       c.onmousemove=e=>showTip(e,`<b>${r[0]}</b> · ${r[1]}<br>${fmt(r[2])} vehículos · ${fmt(r[3])} inspecciones<br>${fmt(Math.max(0,r[3]-r[2]))} reinspecciones${r[4]!=null?'<br>'+fmt(r[4],1)+' años promedio':''}`);c.onmouseleave=hideTip;
       c.onclick=()=>{selLoc=r[0];drawMap();info();renderTable(true)}})}
@@ -982,7 +992,7 @@ $$('#segLayer button').forEach(b=>b.onclick=()=>{$$('#segLayer button').forEach(
 
 /* ---------- SCENE 2 ---------- */
 inits['2-0']=()=>waffle($('#wAnom'),[[48,css('--b2')]]);
-inits['2-1']=()=>{const h=$('#tipoAnom');h.innerHTML='';const cols=[css('--b1'),css('--b3'),css('--b4')],inks=['var(--b1i)','var(--b3i)','var(--b4i)'];
+inits['2-1']=()=>{const h=$('#tipoAnom');h.innerHTML='';const cols=[css('--tP'),css('--tC'),css('--tB')],inks=['var(--b1i)','var(--b3i)','var(--b4i)'];
   D.tipoAnom.forEach((t,i)=>{const C=2*Math.PI*70;const d=document.createElement('div');d.className='card';d.style.textAlign='center';
     d.innerHTML=`<svg viewBox="0 0 180 180" width="180" height="180"><circle cx="90" cy="90" r="70" fill="none" stroke="${css('--bg2')}" stroke-width="18"/><circle class="ring" cx="90" cy="90" r="70" fill="none" stroke="${cols[i]}" stroke-width="18" stroke-linecap="round" stroke-dasharray="0 ${C}" transform="rotate(-90 90 90)" style="transition:stroke-dasharray 1.3s ease"/><g transform="translate(58,62) scale(1)"><svg width="64" height="40" style="color:${cols[i]}"><use href="#${t[1]}"/></svg></g><text x="90" y="128" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="27" fill="${inks[i]}">${fmt(t[4],1)}%</text></svg>
     <h3 style="margin:4px 0;font-size:28px">${t[0]}</h3><div class="note" style="margin:0 auto">${fmt(t[3])} de ${fmt(t[2])} vehículos con anomalías</div>
@@ -1011,9 +1021,9 @@ function sysInfo(){const sy=D.sys[sysSel];$('#sysInfo').innerHTML=`<div class="n
   $('#sysInfo').querySelectorAll('[data-count]').forEach(countUp);
   bars($('#barsSys'),D.sys.slice(0,6).map((s,i)=>[`${i+1}. ${s[0]}`,s[1],s[2]]),{fmt:it=>fmt(it[2],1)+'%',hl:it=>it[0].includes(D.sys[sysSel][0])})}
 inits['2-3']=()=>{drawCar();sysInfo()};
-inits['2-4']=()=>{const s=$('#stackAcum');s.innerHTML='';const cols=[css('--muted'),'#CDEB85',css('--b2'),'#4F7A00'];let x=0;
+inits['2-4']=()=>{const s=$('#stackAcum');s.innerHTML='';const cols=[css('--q1'),css('--q2'),css('--q3'),css('--q4')];let x=0;
   D.acum.forEach((a,i)=>{const w=a[2]/100*600;const r=el('rect',{x,y:10,width:0,height:70,fill:cols[i],style:'transition:width 1s'},s);setTimeout(()=>r.setAttribute('width',w-2),50+i*200);
-    const t=el('text',{x:x+8,y:52,fill:i==3?'#fff':i==0?css('--ink'):'#003252','font-size':22,'font-weight':800,'font-family':'Montserrat'},s);t.textContent=fmt(a[2],1)+'%';
+    const t=el('text',{x:x+8,y:52,fill:css('--onq'+(i+1)),'font-size':22,'font-weight':800,'font-family':'Montserrat'},s);t.textContent=fmt(a[2],1)+'%';
     const l=el('text',{x:x+4,y:104,fill:css('--ink2'),'font-size':14},s);l.textContent=a[0];x+=w});
   bars($('#barsAcum'),D.acum,{color:(it,i)=>cols[i]})};
 
@@ -1024,7 +1034,7 @@ inits['3-0']=()=>{const s=$('#sevStack');s.innerHTML='';const parts=[[72.8,css('
   const t=el('text',{x:517,y:142,'text-anchor':'middle',fill:css('--ink'),'font-size':17,'font-weight':700},s);t.textContent='64.807 M/G = 27,2%';
   waffle($('#wSev'),[[2,css('--sevG')],[11,css('--sevM')]])};
 inits['3-1']=()=>{const h=$('#igual');h.innerHTML='';D.igual.forEach(t=>{const d=document.createElement('div');d.className='card';
-  d.innerHTML=`<div class="row" style="justify-content:space-between"><h3 style="margin:0;font-size:28px">${t[0]}</h3><div style="text-align:right"><span class="big" style="font-size:40px;color:var(--sevMi)">${fmt(t[2],1)}</span> <span class="note">M/G</span> &nbsp; <span class="big" style="font-size:40px;color:var(--sevGi)">${fmt(t[3],1)}</span> <span class="note">G</span></div></div><div class="waffle" style="margin-top:10px"></div><div class="note" style="margin-top:10px">Registros cada 100 vehículos: ${fmt(t[4],1)} M/G, ${fmt(t[5],1)} G</div>`;
+  d.innerHTML=`<div class="row" style="justify-content:space-between"><h3 style="margin:0;font-size:28px">${t[0]}</h3><div style="text-align:right"><span class="big sw" style="font-size:40px;--c:var(--sevM)">${fmt(t[2],1)}</span> <span class="note">M/G</span> &nbsp; <span class="big sw" style="font-size:40px;--c:var(--sevG)">${fmt(t[3],1)}</span> <span class="note">G</span></div></div><div class="waffle" style="margin-top:10px"></div><div class="note" style="margin-top:10px">Registros cada 100 vehículos: ${fmt(t[4],1)} M/G, ${fmt(t[5],1)} G</div>`;
   h.appendChild(d);const g=Math.round(t[3]),mg=Math.round(t[2]);waffle(d.querySelector('.waffle'),[[g,css('--sevG')],[mg-g,css('--sevM')]],t[1])})};
 const COEF=[['Vehículos con falla M/G','¿Cuántos vehículos tienen al menos una falla moderada o grave?',2,'vehículos con falla M/G'],
  ['Vehículos con falla Grave','¿Cuántos vehículos tienen al menos una falla grave?',3,'vehículos con falla Grave'],
@@ -1032,7 +1042,7 @@ const COEF=[['Vehículos con falla M/G','¿Cuántos vehículos tienen al menos u
  ['Cantidad de fallas Graves','¿Cuántas fallas graves se registran en total?',5,'fallas Graves']];
 let coefI=0;const segC=$('#segCoef');COEF.forEach((k,i)=>{const b=document.createElement('button');b.textContent=k[0];if(!i)b.className='on';b.onclick=()=>{[...segC.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');coefI=i;inits['3-2']()};segC.appendChild(b)});
 inits['3-2']=()=>{const s=$('#coefChart');s.innerHTML='';const K=COEF[coefI],idx=K[2];const base100=D.igual[0][idx];
-  const names=['Particular','Carga','Pasajeros'],icons=['car','truck','bus'],cols=[css('--b1'),css('--b3'),css('--b4')];
+  const names=['Particular','Carga','Pasajeros'],icons=['car','truck','bus'],cols=[css('--tP'),css('--tC'),css('--tB')];
   const v=Object.values(D.coef)[coefI];const H=230,max=2.5,base=270;
   el('line',{x1:40,x2:690,y1:base,y2:base,stroke:css('--line'),'stroke-width':2},s);
   v.forEach((c,i)=>{const x=80+i*210,h=c/max*H;const r=el('rect',{x,y:base,width:140,height:0,rx:12,fill:cols[i],style:'transition:all 1s cubic-bezier(.2,.8,.2,1)'},s);setTimeout(()=>{r.setAttribute('y',base-h);r.setAttribute('height',h)},50+i*120);
@@ -1129,7 +1139,7 @@ function sim(){['pG','fM','fL','cS'].forEach(k=>$('#'+k).value=S5[k]);
   $('#formula').innerHTML=`Evitados = Graves × ${fmt(S5.pG,1)}% + Moderadas × ${fmt(S5.pG,1)}% × ${S5.fM}% + Leves × ${fmt(S5.pG,1)}% × ${fmt(S5.fL,1)}%`;
   const s=$('#contrib');s.innerHTML='';const parts=[['Grave',r.g,css('--sevG')],['Moderada',r.m,css('--sevM')],['Leve',r.l,css('--sevL')]];let x=0;
   parts.forEach(p=>{const w=n?p[1]/n*600:0;el('rect',{x,y:6,width:Math.max(0,w-2),height:40,rx:6,fill:p[2]},s);
-    if(w>70){const t=el('text',{x:x+8,y:32,fill:p[0]=='Moderada'?'#003252':'#fff','font-size':17,'font-weight':800,'font-family':'Montserrat'},s);t.textContent=fmt(p[1])}
+    if(w>70){const t=el('text',{x:x+8,y:32,fill:p[0]=='Grave'?'#fff':'#003252','font-size':17,'font-weight':800,'font-family':'Montserrat'},s);t.textContent=fmt(p[1])}
     const l=el('text',{x:x+2,y:70,fill:css('--ink2'),'font-size':13},s);if(w>60)l.textContent=`${p[0]} · ${fmt(n?p[1]/n*100:0)}%`;x+=w});
   if(tabState[5]==4)where()}
 ['pG','fM','fL','cS'].forEach(k=>$('#'+k).oninput=()=>{S5[k]=+$('#'+k).value;$$('#segPreset button').forEach(b=>b.classList.remove('on'));sim()});
@@ -1156,29 +1166,29 @@ let gK='neu',gRun=0,gSaved=0;const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 function gNote(){const f=GF[gK];$('#gFaultNote').innerHTML=`En el semestre la RTO detectó esta falla <b>${fmt(f.L)}</b> veces como Leve, <b>${fmt(f.M)}</b> como Moderada y <b>${fmt(f.G)}</b> como Grave.`}
 function gLevel(l){const f=GF[gK],b=$('#gBadge');$$('.gm i').forEach(i=>i.classList.toggle('on',i.dataset.l==l));$('.gm').classList.toggle('ok',l=='ok');
   if(!l){b.classList.remove('on');return}
-  const c={L:css('--sevL'),M:css('--sevM'),G:css('--sevG'),ok:css('--b2')}[l];b.style.background=c;b.style.borderTopColor=c;b.style.color=(l=='M'||l=='ok')?'#003252':'#fff';
+  const c={L:css('--sevL'),M:css('--sevM'),G:css('--sevG'),ok:css('--ok')}[l];b.style.background=c;b.style.borderTopColor=c;b.style.color=l=='G'?'#fff':'#003252';
   b.textContent=l=='ok'?'✅ Falla corregida':({L:'LEVE',M:'MODERADA',G:'GRAVE'}[l])+' · '+f.t[l];b.classList.remove('on');void b.offsetWidth;b.classList.add('on');
-  $('#gCar').style.color=l=='G'?css('--sevG'):l=='M'?css('--sevM'):l=='ok'?css('--b2'):css('--b1')}
+  $('#gCar').style.color=l=='G'?css('--sevG'):l=='M'?css('--sevM'):l=='ok'?css('--ok'):css('--tP')}
 function gMsg(h){$('#gMsg').innerHTML=h}
 function gReset(){const c=$('#gCar');c.style.transition='none';c.style.left='3%';c.style.transform='';void c.offsetWidth;c.style.transition='';
   const o=$('#gOther');o.style.transition='none';o.style.left='110%';void o.offsetWidth;o.style.transition='';
   ['#gBoom','#gFlash','#gWrench'].forEach(s=>$(s).classList.remove('on'));$('#gStation').classList.remove('glow','off');$('#game').classList.remove('moving','shake');$('#gConf').innerHTML='';gLevel(null)}
 async function drive(to,ms=1800){const c=$('#gCar');c.style.transitionDuration=ms+'ms';$('#game').classList.add('moving');c.style.left=to;await sleep(ms);$('#game').classList.remove('moving')}
-function confetti(){const h=$('#gConf');const cols=[css('--b1'),css('--b2'),css('--b3'),css('--b6'),css('--b5'),'#FFFFFF'];h.innerHTML='';
+function confetti(){const h=$('#gConf');const cols=[css('--ok'),css('--neu'),css('--q2'),css('--q1'),'#FFFFFF'];h.innerHTML='';
   for(let i=0;i<90;i++){const p=document.createElement('i');p.style.left=Math.random()*100+'%';p.style.background=cols[i%cols.length];p.style.animationDuration=(1.4+Math.random()*1.6)+'s';p.style.animationDelay=(Math.random()*.5)+'s';h.appendChild(p)}}
 function countTo(el,to,f,ms=1200){const t0=performance.now(),from=el._v||0;el._v=to;(function st(n){const p=Math.min(1,(n-t0)/ms);el.textContent=f(from+(to-from)*p);if(p<1)requestAnimationFrame(st)})(t0)}
 async function play(mode){const id=++gRun;const ok=()=>id==gRun;$('#gSin').disabled=$('#gCon').disabled=true;gReset();await sleep(100);const f=GF[gK];
   if(mode=='sin')$('#gStation').classList.add('off');
-  gMsg('Mes 1: aparece una falla <span style="color:var(--sevLi)">leve</span> en '+f.n+'…');gLevel('L');await drive('24%');if(!ok())return;
+  gMsg('Mes 1: aparece una falla <span class="sw" style="--c:var(--sevL)">leve</span> en '+f.n+'…');gLevel('L');await drive('24%');if(!ok())return;
   if(mode=='sin'){
-    gMsg('Mes 4: nadie la revisa y se <span style="color:var(--sevMi)">agrava</span>.');gLevel('M');$('#gStLabel').textContent='Sin control técnico';await drive('48%');if(!ok())return;
-    gMsg('Mes 8: ya es <span style="color:var(--sevGi)">grave</span>. '+f.t.G+'.');gLevel('G');await drive('64%',1500);if(!ok())return;
+    gMsg('Mes 4: nadie la revisa y se <span class="sw" style="--c:var(--sevM)">agrava</span>.');gLevel('M');$('#gStLabel').textContent='Sin control técnico';await drive('48%');if(!ok())return;
+    gMsg('Mes 8: ya es <span class="sw" style="--c:var(--sevG)">grave</span>. '+f.t.G+'.');gLevel('G');await drive('64%',1500);if(!ok())return;
     gMsg('¡Cuidado!');const o=$('#gOther');o.style.left='79%';await drive('66%',1200);if(!ok())return;
     $('#gBoom').classList.add('on');$('#gFlash').classList.add('on');$('#game').classList.add('shake');$('#gCar').style.transform='rotate(-14deg) translateY(-10px)';
-    gMsg('💥 Siniestro grave. Costo social promedio: <span style="color:var(--sevGi)" id="gCost">US$ 0</span>');countTo($('#gCost'),38000,v=>'US$ '+fmt(v));
+    gMsg('💥 Siniestro grave. Costo social promedio: <span class="sw" style="--c:var(--sevG)" id="gCost">US$ 0</span>');countTo($('#gCost'),38000,v=>'US$ '+fmt(v));
     await sleep(500);$('#gFlash').classList.remove('on')}
   else{
-    gMsg('Mes 4: la falla ya es <span style="color:var(--sevMi)">moderada</span>… pero llega a la RTO.');gLevel('M');$('#gStLabel').textContent='Taller de RTO';await drive('52%',1700);if(!ok())return;
+    gMsg('Mes 4: la falla ya es <span class="sw" style="--c:var(--sevM)">moderada</span>… pero llega a la RTO.');gLevel('M');$('#gStLabel').textContent='Taller de RTO';await drive('52%',1700);if(!ok())return;
     $('#gStation').classList.add('glow');$('#gWrench').classList.add('on');gMsg('🔍 La RTO la detecta antes de que sea grave y exige corregirla.');await sleep(2000);if(!ok())return;
     $('#gWrench').classList.remove('on');gLevel('ok');gMsg('✅ Se corrige y vuelve a circular sin la falla.');await sleep(900);
     await drive('112%',1700);if(!ok())return;confetti();gSaved++;countTo($('#gSaved'),gSaved,v=>fmt(v),600);countTo($('#gUsd'),gSaved*38000,v=>'US$ '+fmt(v));
@@ -1210,7 +1220,7 @@ inits['6-1']=()=>{$('#signals').innerHTML=SIG.map(s=>`<div class="card"><div cla
 inits['6-2']=()=>{$('#matriz').innerHTML='<tr><th>Línea</th><th>Acción</th><th>Indicador de seguimiento</th></tr>'+[['Prevención por sistema','Piezas específicas sobre frenos, neumáticos, suspensión/dirección e iluminación.','I-MG e I-G por sistema; top de anomalías M/G y G.'],['Prevención por antigüedad','Focalizar mantenimiento donde la curva se acelera, desde 12–14 años.','M/G y G cada 100 por tramo; RR vs 0–5 años.'],['Segmentación por uso','Separar Particular, Carga y Pasajeros en seguimiento y comunicación.','I-MG, I-G, D-MG y D-G por tipo.'],['Valor preventivo','Publicar el escenario de siniestros potencialmente evitados y validarlo cruzando dominios con siniestralidad provincial.','Siniestros evitados cada 10.000 inspecciones; costo social evitado.'],['Corrección posterior','Incorporar fecha e ID de inspección para medir retorno y regularización.','Retorno en plazo; aprobación en 1ª reinspección; días hasta retorno.'],['Calidad de datos','Reducir no aprobados sin anomalía y mantener trazabilidad de severidad.','Registros inconsistentes; anomalías sin L/M/G.'],['Seguimiento semestral','Repetir la misma metodología y comparar contra 1S-2026.','Variación semestral de KPI con denominadores constantes.']].map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td class="note">${r[2]}</td></tr>`).join('')};
 const BASE=[['Inspecciones válidas',224306,0,''],['Dominios caracterizados',202773,0,''],['Vehículos con anomalías',47.6,1,'/100'],['Densidad de anomalías',117.5,1,'/100'],['I-MG',13.3,1,'/100'],['I-G',1.7,1,'/100'],['D-MG',32.0,1,'/100'],['D-G',2.7,1,'/100'],['M/G en más de 10 años',17.7,1,'/100'],['M/G en 12–14 años',12.83,2,'/100']];
 inits['6-3']=()=>{$('#baseK').innerHTML=BASE.map(b=>`<div class="kpi"><div class="v"><span data-count="${b[1]}" data-dec="${b[2]}">0</span><span style="font-size:20px">${b[3]}</span></div><div class="k">${b[0]}</div></div>`).join('')+`<div class="kpi"><span class="pill pend">Pendiente</span><div class="k" style="margin-top:8px">Retorno en plazo</div></div><div class="kpi"><span class="pill pend">Pendiente</span><div class="k" style="margin-top:8px">Regularización</div></div>`;
-  $('#segK').innerHTML=[['Particular','car',46.5,12.8,1.6,29.7,2.6],['Carga','truck',63.6,21.0,3.4,67.4,5.6],['Pasajeros','bus',57.4,10.9,.9,27.4,1.2]].map(r=>`<div class="card"><div class="row"><svg width="50" height="32" style="color:var(--b6i)"><use href="#${r[1]}"/></svg><h3 style="margin:0;font-size:24px">${r[0]}</h3></div><table class="t" style="margin-top:6px"><tr><td>Con anomalía</td><td class="num">${fmt(r[2],1)}</td></tr><tr><td>I-MG / I-G</td><td class="num">${fmt(r[3],1)} / ${fmt(r[4],1)}</td></tr><tr><td>D-MG / D-G</td><td class="num">${fmt(r[5],1)} / ${fmt(r[6],1)}</td></tr></table></div>`).join('')};
+  $('#segK').innerHTML=[['Particular','car',46.5,12.8,1.6,29.7,2.6],['Carga','truck',63.6,21.0,3.4,67.4,5.6],['Pasajeros','bus',57.4,10.9,.9,27.4,1.2]].map(r=>`<div class="card"><div class="row"><svg width="50" height="32" style="color:${({car:'var(--tP)',truck:'var(--tC)',bus:'var(--tB)'})[r[1]]}"><use href="#${r[1]}"/></svg><h3 style="margin:0;font-size:24px">${r[0]}</h3></div><table class="t" style="margin-top:6px"><tr><td>Con anomalía</td><td class="num">${fmt(r[2],1)}</td></tr><tr><td>I-MG / I-G</td><td class="num">${fmt(r[3],1)} / ${fmt(r[4],1)}</td></tr><tr><td>D-MG / D-G</td><td class="num">${fmt(r[5],1)} / ${fmt(r[6],1)}</td></tr></table></div>`).join('')};
 const sel=$('#cmpK');BASE.slice(2).forEach((b,i)=>sel.insertAdjacentHTML('beforeend',`<option value="${i+2}">${b[0]} (base ${fmt(b[1],b[2])})</option>`));
 function cmp(){const b=BASE[+sel.value],v=parseFloat(String($('#cmpV').value).replace(',','.'));const o=$('#cmpOut');
   if(isNaN(v)){o.innerHTML=`<p class="note">Ingresá el valor del nuevo semestre para ver cuánto cambió respecto de la línea de base (${fmt(b[1],b[2])}${b[3]}).</p>`;return}
