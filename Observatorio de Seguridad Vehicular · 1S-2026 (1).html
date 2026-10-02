@@ -10,12 +10,13 @@
 :root{
   --bg:#F4F7FA; --bg2:#E6EDF3; --surface:#FFFFFF; --ink:#003252; --ink2:#2F4F6B; --line:#D5E0E8; --road:#003252; --roadline:#F4F7FA; --muted:#C8D5DF;
   /* azul neutro: interfaz y datos sin categoria */
-  --neu:#004976; --q1:#C2D8E8; --q2:#7FAACB; --q3:#2F6E9E; --q4:#003252; --onq1:#003252; --onq2:#003252; --onq3:#FFFFFF; --onq4:#FFFFFF;
+  --neu:#004976; --gen:#2E9BDB; --brand:#97D700;
+  --q1:#C0E1F4; --q2:#8CC8EB; --q3:#58AFE2; --q4:#2E9BDB; --onq1:#003252; --onq2:#003252; --onq3:#003252; --onq4:#003252;
   /* severidad (constante): leve verde, moderada naranja, grave rojo */
   --sevL:#97D700; --sevM:#FFA400; --sevG:#E03A45; --ok:#97D700;
   /* tipos de vehiculo (constante) */
   --tP:#2BBFC3; --tC:#7B61D9; --tB:#E0457B;
-  --b0:var(--neu); --b1:var(--neu); --b2:var(--neu); --b3:var(--neu); --b4:var(--neu); --b5:var(--neu); --b6:var(--neu);
+  --b0:var(--gen); --b1:var(--gen); --b2:var(--gen); --b3:var(--gen); --b4:var(--gen); --b5:var(--gen); --b6:var(--gen);
   --b0i:var(--ink); --b1i:var(--ink); --b2i:var(--ink); --b3i:var(--ink); --b4i:var(--ink); --b5i:var(--ink); --b6i:var(--ink); --sevLi:var(--ink); --sevMi:var(--ink); --sevGi:var(--ink);
   --on-b0:#FFFFFF; --on-b1:#FFFFFF; --on-b2:#FFFFFF; --on-b3:#FFFFFF; --on-b4:#FFFFFF; --on-b5:#FFFFFF; --on-b6:#FFFFFF;
   --hdr:#003252; --hdrInk:#FFFFFF;
@@ -25,10 +26,11 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#00243C; --bg2:#002E4C; --surface:#003252; --ink:#FFFFFF; --ink2:#C9D9E5; --line:#13507A; --road:#001B2E; --roadline:#C9D9E5; --muted:#1C5580;
-    --neu:#5DA9DD; --q1:#1C5580; --q2:#2F78AE; --q3:#5DA9DD; --q4:#BFE0F5; --onq1:#FFFFFF; --onq2:#FFFFFF; --onq3:#00243C; --onq4:#00243C;
+    --neu:#5DA9DD; --gen:#5DB4EA; --brand:#97D700;
+    --q1:#1C5980; --q2:#337AA6; --q3:#4A9ACC; --q4:#5DB4EA; --onq1:#FFFFFF; --onq2:#FFFFFF; --onq3:#00243C; --onq4:#00243C;
     --sevL:#97D700; --sevM:#FFA400; --sevG:#FF5466; --ok:#97D700;
     --tP:#57E2E5; --tC:#A08BFF; --tB:#FF7FA9;
-    --b0:var(--neu); --b1:var(--neu); --b2:var(--neu); --b3:var(--neu); --b4:var(--neu); --b5:var(--neu); --b6:var(--neu);
+    --b0:var(--gen); --b1:var(--gen); --b2:var(--gen); --b3:var(--gen); --b4:var(--gen); --b5:var(--gen); --b6:var(--gen);
     --b0i:var(--ink); --b1i:var(--ink); --b2i:var(--ink); --b3i:var(--ink); --b4i:var(--ink); --b5i:var(--ink); --b6i:var(--ink); --sevLi:var(--ink); --sevMi:var(--ink); --sevGi:var(--ink);
     --on-b0:#00243C; --on-b1:#00243C; --on-b2:#00243C; --on-b3:#00243C; --on-b4:#00243C; --on-b5:#00243C; --on-b6:#00243C;
     --hdr:#001B2E; --hdrInk:#FFFFFF; --onAccent:#00243C;
@@ -36,10 +38,11 @@
 }
 :root[data-theme="dark"]{
   --bg:#00243C; --bg2:#002E4C; --surface:#003252; --ink:#FFFFFF; --ink2:#C9D9E5; --line:#13507A; --road:#001B2E; --roadline:#C9D9E5; --muted:#1C5580;
-  --neu:#5DA9DD; --q1:#1C5580; --q2:#2F78AE; --q3:#5DA9DD; --q4:#BFE0F5; --onq1:#FFFFFF; --onq2:#FFFFFF; --onq3:#00243C; --onq4:#00243C;
+  --neu:#5DA9DD; --gen:#5DB4EA; --brand:#97D700;
+    --q1:#1C5980; --q2:#337AA6; --q3:#4A9ACC; --q4:#5DB4EA; --onq1:#FFFFFF; --onq2:#FFFFFF; --onq3:#00243C; --onq4:#00243C;
   --sevL:#97D700; --sevM:#FFA400; --sevG:#FF5466; --ok:#97D700;
   --tP:#57E2E5; --tC:#A08BFF; --tB:#FF7FA9;
-  --b0:var(--neu); --b1:var(--neu); --b2:var(--neu); --b3:var(--neu); --b4:var(--neu); --b5:var(--neu); --b6:var(--neu);
+  --b0:var(--gen); --b1:var(--gen); --b2:var(--gen); --b3:var(--gen); --b4:var(--gen); --b5:var(--gen); --b6:var(--gen);
   --b0i:var(--ink); --b1i:var(--ink); --b2i:var(--ink); --b3i:var(--ink); --b4i:var(--ink); --b5i:var(--ink); --b6i:var(--ink); --sevLi:var(--ink); --sevMi:var(--ink); --sevGi:var(--ink);
   --on-b0:#00243C; --on-b1:#00243C; --on-b2:#00243C; --on-b3:#00243C; --on-b4:#00243C; --on-b5:#00243C; --on-b6:#00243C;
   --hdr:#001B2E; --hdrInk:#FFFFFF; --onAccent:#00243C;
@@ -72,7 +75,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .scene.on{opacity:1;pointer-events:auto;transform:none}
 .scene.left{transform:translateX(-40px)}
 .shead{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.bnum{width:62px;height:62px;border-radius:18px;background:var(--accent);color:var(--onAccent);display:grid;place-items:center;font:800 32px/1 Montserrat,sans-serif;flex:none}
+.bnum{width:62px;height:62px;border-radius:18px;background:var(--stepc,var(--accent));color:var(--stepInk,var(--onAccent));display:grid;place-items:center;font:800 32px/1 Montserrat,sans-serif;flex:none}
 .shead h2{margin:0;font-size:40px;line-height:1;font-weight:800;color:var(--accentInk)}
 .shead p{margin:4px 0 0;color:var(--ink2);font-size:19px}
 .shead .q{margin-left:auto;text-align:right;font-family:Montserrat,sans-serif;font-size:20px;font-weight:600;color:var(--ink);max-width:420px;line-height:1.15}
@@ -91,7 +94,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .big{font-family:Montserrat,sans-serif;font-weight:800;line-height:1;letter-spacing:-.5px;color:var(--accentInk)}
 .lead{font-size:20px;line-height:1.4;max-width:62ch}
 .note{font-size:14px;color:var(--ink2);max-width:75ch}
-.callout{border-left:5px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface));padding:14px 18px;border-radius:0 14px 14px 0;font-size:19px;font-weight:600;line-height:1.35}
+.callout{border-left:5px solid var(--gen);background:color-mix(in srgb,var(--gen) 12%,var(--surface));padding:14px 18px;border-radius:0 14px 14px 0;font-size:19px;font-weight:600;line-height:1.35}
 .seg{display:inline-flex;background:var(--bg2);border-radius:999px;padding:4px;gap:2px;flex-wrap:wrap}
 .seg button{border:none;background:none;padding:6px 14px;border-radius:999px;font-weight:600;font-size:14px;color:var(--ink2)}
 .seg button.on{background:var(--accent);color:var(--onAccent)}
@@ -104,7 +107,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .bar{display:grid;grid-template-columns:minmax(150px,280px) 1fr 86px;gap:12px;align-items:center;font-size:15px}
 .bar .lab{line-height:1.2}
 .bar .trk{height:22px;background:var(--bg2);border-radius:6px;overflow:hidden}
-.bar .fil{height:100%;width:0;background:var(--accent);border-radius:6px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.bar .fil{height:100%;width:0;background:var(--gen);border-radius:6px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
 .bar .val{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
 .bar.hl .fil{background:var(--sevG)}
 .bar.hl .lab{font-weight:700}
@@ -156,9 +159,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* anatomy */
 .anat svg{width:100%;height:auto}
 .hot{cursor:pointer}
-.hot circle.p{fill:var(--accent);opacity:.25;transform-box:fill-box;transform-origin:center;animation:pulse 2s infinite}
-.hot circle.c{fill:var(--accent);stroke:#fff;stroke-width:3}
-.hot text{fill:var(--onAccent);font:800 15px Montserrat,sans-serif;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.hot circle.p{fill:var(--gen);opacity:.25;transform-box:fill-box;transform-origin:center;animation:pulse 2s infinite}
+.hot circle.c{fill:var(--gen);stroke:#fff;stroke-width:3}
+.hot text{fill:#003252;font:800 15px Montserrat,sans-serif;text-anchor:middle;dominant-baseline:central;pointer-events:none}
 .hot.sel circle.c{fill:var(--sevG)}
 @keyframes pulse{0%{transform:scale(1);opacity:.4}100%{transform:scale(2.2);opacity:0}}
 
@@ -180,7 +183,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .tl .cut{position:absolute;top:18px;height:64px;border-left:2px dashed var(--ink2)}
 .tl .cut span{position:absolute;top:-18px;left:4px;font-size:12px;white-space:nowrap;color:var(--ink2)}
 .tl .win{position:absolute;top:52px;height:26px;border-radius:13px;transition:all .4s}
-.tl .dot{position:absolute;top:48px;width:34px;height:34px;margin-left:-17px;border-radius:50%;background:var(--accent);border:4px solid var(--surface);box-shadow:0 2px 6px rgba(0,0,0,.3);transition:left .2s}
+.tl .dot{position:absolute;top:48px;width:34px;height:34px;margin-left:-17px;border-radius:50%;background:var(--gen);border:4px solid var(--surface);box-shadow:0 2px 6px rgba(0,0,0,.3);transition:left .2s}
 input[type=range]{width:100%;accent-color:var(--accent);height:30px}
 .pill{display:inline-block;padding:5px 12px;border-radius:999px;font-weight:700;font-size:14px}
 .ok{background:color-mix(in srgb,var(--ok) 28%,var(--surface));color:var(--ink)}
@@ -192,7 +195,7 @@ table.t th{text-align:left;color:var(--ink2);font-weight:600;border-bottom:2px s
 table.t td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top}
 table.t td.num{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.kpi{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:14px;padding:14px 16px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--gen);border-radius:14px;padding:14px 16px}
 .kpi .v{font:800 38px/1 Montserrat,sans-serif;color:var(--accentInk)}
 .kpi .k{font-weight:700;margin:4px 0 2px}
 .kpi p{margin:0;font-size:14px;color:var(--ink2)}
@@ -227,7 +230,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 .actors{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .actors div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:13px;line-height:1.2;display:flex;flex-direction:column;align-items:center;gap:6px}
 .sl{margin-top:12px}.sl label{font-size:15px;font-weight:600}.sl .row{flex-wrap:nowrap}.sl b{min-width:86px;text-align:right;font-size:18px}
-.hero5{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;border-top:6px solid var(--accent)}
+.hero5{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;border-top:6px solid var(--gen)}
 @media (max-width:1000px){.stairs{height:560px}.step p.ex{display:none}.actors{grid-template-columns:repeat(3,1fr)}}
 
 .terr{display:grid;grid-template-columns:minmax(280px,.78fr) 1.22fr;gap:24px;align-items:start}
@@ -246,7 +249,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:10px;borde
 #tLoc td{padding:6px 10px}
 #tLoc tbody tr{cursor:pointer}
 #tLoc tbody tr:hover{background:var(--bg2)}
-#tLoc tbody tr.sel{background:color-mix(in srgb,var(--accent) 16%,var(--surface));font-weight:700}
+#tLoc tbody tr.sel{background:color-mix(in srgb,var(--gen) 22%,var(--surface));font-weight:700}
 @media (max-width:1000px){.terr{grid-template-columns:1fr}.tbox{max-height:50vh}}
 
 .mx{display:grid;grid-template-columns:minmax(170px,.7fr) 1fr 1fr;gap:12px;align-items:stretch}
@@ -873,8 +876,9 @@ const NOTES=[
  ['Bloque 6','1S-2026 es la línea de base. Próximos informes: mismas definiciones, tasas cada 100 vehículos, valor actual contra base y variación.'],
  ['Cierre','Más datos, más prevención, más seguridad vial. La información de hoy conduce a un mañana más seguro.']];
 const stops=$('#stops');
-scenes.forEach((s,i)=>{const b=document.createElement('button');b.className='stop';const c=`var(--${s.dataset.color})`;
-  b.innerHTML=`<span class="pin" style="background:${c};color:var(--on-${s.dataset.color})">${i==0?'▶':i==7?'★':i}</span><span class="t">${s.dataset.name}</span>`;b.onclick=()=>go(i,0);stops.appendChild(b)});
+scenes.forEach((s,i)=>{const b=document.createElement('button');b.className='stop';const pc=30+i*10,c=`color-mix(in srgb,var(--brand) ${pc}%,var(--road))`,ci=pc>=60?'#003252':'#FFFFFF';
+  s.style.setProperty('--stepc',c);s.style.setProperty('--stepInk',ci);
+  b.innerHTML=`<span class="pin" style="background:${c};color:${ci}">${i==0?'▶':i==7?'★':i}</span><span class="t">${s.dataset.name}</span>`;b.onclick=()=>go(i,0);stops.appendChild(b)});
 const mini=$('#mini6');['El parque','Lo que conocemos','El riesgo','Factores asociados','Siniestros evitados','Conclusión'].forEach((n,i)=>{const b=document.createElement('button');b.innerHTML=`<b>${i+1}</b>${n}`;b.onclick=()=>go(i+1,0);mini.appendChild(b)});
 
 scenes.forEach((s,si)=>{const tabs=[...s.querySelectorAll('.tab')];const panels=[...s.querySelectorAll('.panel')];
@@ -885,7 +889,7 @@ function setTab(si,ti){const s=scenes[si];tabState[si]=ti;s._tabs.forEach((t,i)=
   const key=si+'-'+ti;if(inits[key])inits[key]();s._panels[ti]&&s._panels[ti].querySelectorAll('[data-count]').forEach(countUp)}
 function go(i,ti){if(i<0||i>=scenes.length)return;const prev=cur;cur=i;
   scenes.forEach((s,k)=>{s.classList.toggle('on',k==i);s.classList.toggle('left',k<i)});
-  const rs=document.documentElement.style,sc=scenes[i].dataset.color;rs.setProperty('--accent',`var(--${sc})`);rs.setProperty('--accentInk',`var(--${sc}i)`);rs.setProperty('--onAccent',`var(--on-${sc})`);
+  
   $$('.stop').forEach((b,k)=>b.classList.toggle('on',k==i));
   const st=$$('.stop')[i];const r=st.getBoundingClientRect(),pr=stops.getBoundingClientRect();$('#carnav').style.left=Math.max(4,r.left-pr.left+r.width/2-112)+'px';
   if(scenes[i]._panels.length)setTab(i,ti==null?tabState[i]:ti);
@@ -917,11 +921,13 @@ inits.s0=()=>{const o=$('#odo');o.innerHTML='';const str='224.306';[...str].forE
 
 /* ---------- SCENE 1 ---------- */
 inits['1-0']=()=>waffle($('#wUso'),[[93,css('--tP'),'car'],[6,css('--tC'),'truck'],[1,css('--tB'),'bus']]);
-function edad(k){const c=[css('--q1'),css('--q2'),css('--q3'),css('--q4')];waffle($('#wEdad'),D.edadW[k].map((n,i)=>[n,c[i]]),k=='Carga'?'truck':k=='Pasajeros'?'bus':'car');
+const fade=(c,a)=>{const b=hex2rgb(css('--surface')),f=hex2rgb(c);return`rgb(${f.map((v,i)=>Math.round(b[i]+(v-b[i])*a)).join(',')})`};
+const TCOL={Total:'--gen',Particular:'--tP',Carga:'--tC',Pasajeros:'--tB'};
+function edad(k){const c=[.3,.55,.8,1].map(a=>fade(css(TCOL[k]),a));const pn=$('#wEdad').closest('.panel');c.forEach((v,i)=>pn.style.setProperty('--q'+(i+1),v));waffle($('#wEdad'),D.edadW[k].map((n,i)=>[n,c[i]]),k=='Carga'?'truck':k=='Pasajeros'?'bus':'car');
   bars($('#barsEdad'),['0–3 años','4–5 años','6–10 años','Más de 10 años'].map((l,i)=>[l,D.edadN[k][i],D.edad[k][i]]),{fmt:it=>fmt(it[2],1)+'%',color:(it,i)=>c[i]});
   $('#edadLead').innerHTML=k=='Total'?'<b>61,5%</b> de los 202.773 vehículos observados supera los 10 años.':`En ${k}, <b>${fmt(D.edad[k][3],1)}%</b> supera los 10 años.`;
-  $('#edadStats').innerHTML=k=='Total'?['Particular','Carga','Pasajeros'].map(t=>`<div class="card">${ico({Particular:'car',Carga:'truck',Pasajeros:'bus'}[t],{Particular:'var(--b1)',Carga:'var(--b3)',Pasajeros:'var(--b4)'}[t])}<div class="big" style="font-size:40px">${fmt(D.edadS[t][0],1)}</div><div class="note">años promedio · ${t}</div></div>`).join(''):
-   `<div class="card">${ico(k=='Carga'?'truck':k=='Pasajeros'?'bus':'car')}<div class="big" style="font-size:40px">${fmt(D.edadS[k][0],1)}</div><div class="note">años promedio</div></div><div class="card"><div class="big" style="font-size:40px">${D.edadS[k][1]}</div><div class="note">años de mediana</div></div><div class="card"><div class="big" style="font-size:40px">${fmt(D.edadN[k].reduce((a,b)=>a+b))}</div><div class="note">vehículos</div></div>`}
+  $('#edadStats').innerHTML=k=='Total'?['Particular','Carga','Pasajeros'].map(t=>`<div class="card">${ico({Particular:'car',Carga:'truck',Pasajeros:'bus'}[t],{Particular:'var(--tP)',Carga:'var(--tC)',Pasajeros:'var(--tB)'}[t])}<div class="big" style="font-size:40px">${fmt(D.edadS[t][0],1)}</div><div class="note">años promedio · ${t}</div></div>`).join(''):
+   `<div class="card">${ico(k=='Carga'?'truck':k=='Pasajeros'?'bus':'car',`var(${TCOL[k]})`)}<div class="big" style="font-size:40px">${fmt(D.edadS[k][0],1)}</div><div class="note">años promedio</div></div><div class="card"><div class="big" style="font-size:40px">${D.edadS[k][1]}</div><div class="note">años de mediana</div></div><div class="card"><div class="big" style="font-size:40px">${fmt(D.edadN[k].reduce((a,b)=>a+b))}</div><div class="note">vehículos</div></div>`}
 let edadK='Total';inits['1-1']=()=>edad(edadK);
 $$('#segEdad button').forEach(b=>b.onclick=()=>{$$('#segEdad button').forEach(x=>x.classList.remove('on'));b.classList.add('on');edadK=b.dataset.k;edad(edadK)});
 inits['1-2']=()=>bars($('#barsComb'),D.comb);
@@ -998,7 +1004,7 @@ inits['2-1']=()=>{const h=$('#tipoAnom');h.innerHTML='';const cols=[css('--tP'),
     <h3 style="margin:4px 0;font-size:28px">${t[0]}</h3><div class="note" style="margin:0 auto">${fmt(t[3])} de ${fmt(t[2])} vehículos con anomalías</div>
     <div style="margin-top:12px;text-align:left"><div class="note">Anomalías cada 100 vehículos</div><div class="bar" style="grid-template-columns:1fr 60px"><div class="trk"><div class="fil" style="background:${cols[i]}"></div></div><div class="val">${fmt(t[5],1)}</div></div></div>`;
     h.appendChild(d);setTimeout(()=>{d.querySelector('.ring').setAttribute('stroke-dasharray',`${C*t[4]/100} ${C}`);d.querySelector('.fil').style.width=t[5]/230*100+'%'},80+i*150)})};
-let topK='Total';inits['2-2']=()=>bars($('#barsTop'),D.top[topK]);
+let topK='Total';inits['2-2']=()=>bars($('#barsTop'),D.top[topK],{color:css(TCOL[topK])});
 $$('#segTop button').forEach(b=>b.onclick=()=>{$$('#segTop button').forEach(x=>x.classList.remove('on'));b.classList.add('on');topK=b.dataset.k;inits['2-2']()});
 let sysSel=0;
 function drawCar(){const s=$('#anat');s.innerHTML='';const ink=css('--ink2'),body='#4F7391',glass='#DCEBF3';
@@ -1101,7 +1107,7 @@ let ftT='Particular',ftM='mg';
 inits['4-1']=()=>{const s=$('#ftChart');s.innerHTML='';const d=D.ft[ftT][ftM],n=D.ft[ftT].n,tot=D.binT[ftM];const max=ftM=='mg'?35:11,H=250,base=290;
   for(let v=0;v<=max;v+=max/5){el('line',{x1:50,x2:630,y1:base-v/max*H,y2:base-v/max*H,stroke:css('--line')},s);const t=el('text',{x:44,y:base-v/max*H+5,'text-anchor':'end',fill:css('--ink2'),'font-size':12},s);t.textContent=fmt(v,ftM=='mg'?0:1)}
   d.forEach((v,i)=>{const x=64+i*81,h=v/max*H,few=n[i]<100;
-    if(n[i]<30){const l=el('text',{x:x+28,y:base+20,'text-anchor':'middle',fill:css('--ink2'),'font-size':13},s);l.textContent=D.bins[i];const z=el('text',{x:x+28,y:base-14,'text-anchor':'middle',fill:css('--ink2'),'font-size':12},s);z.textContent='sin datos';const z2=el('text',{x:x+28,y:base-1,'text-anchor':'middle',fill:css('--ink2'),'font-size':12},s);z2.textContent='suficientes';return}const r=el('rect',{x,y:base,width:56,height:0,rx:6,fill:few?css('--muted'):css('--b4'),style:'transition:all .9s'},s);setTimeout(()=>{r.setAttribute('y',base-h);r.setAttribute('height',h)},50+i*80);
+    if(n[i]<30){const l=el('text',{x:x+28,y:base+20,'text-anchor':'middle',fill:css('--ink2'),'font-size':13},s);l.textContent=D.bins[i];const z=el('text',{x:x+28,y:base-14,'text-anchor':'middle',fill:css('--ink2'),'font-size':12},s);z.textContent='sin datos';const z2=el('text',{x:x+28,y:base-1,'text-anchor':'middle',fill:css('--ink2'),'font-size':12},s);z2.textContent='suficientes';return}const r=el('rect',{x,y:base,width:56,height:0,rx:6,fill:few?css('--muted'):css(TCOL[ftT]),style:'transition:all .9s'},s);setTimeout(()=>{r.setAttribute('y',base-h);r.setAttribute('height',h)},50+i*80);
     const t=el('text',{x:x+28,y:base-h-8,'text-anchor':'middle',fill:css('--ink'),'font-size':17,'font-weight':800,'font-family':'Montserrat'},s);t.textContent=fmt(v,ftM=='mg'?1:2);
     const l=el('text',{x:x+28,y:base+20,'text-anchor':'middle',fill:css('--ink2'),'font-size':13},s);l.textContent=D.bins[i];
     const m=el('text',{x:x+28,y:base+38,'text-anchor':'middle',fill:css('--ink2'),'font-size':11},s);m.textContent='n='+fmt(n[i]);
@@ -1147,8 +1153,9 @@ $$('#segPreset button').forEach(b=>b.onclick=()=>{$$('#segPreset button').forEac
 inits['5-3']=sim;
 let whereK='tipo';
 function where(){const L=whereK=='tipo'?TIPO5:EDAD5;const rows=L.map(r=>{const c=calc5(r[1],r[2],r[3]);const n=c.g+c.m+c.l;return[r[0],n,n/r[4]*1000]});
-  bars($('#barsWhere'),rows,{fmt:it=>fmt(it[1],0),color:css('--b5')});
-  bars($('#barsWhereRate'),rows.map(r=>[r[0],r[2]]),{fmt:it=>fmt(it[1],1),color:css('--sevM')});
+  const wc=(it,i)=>whereK=='tipo'?css(TCOL[it[0]]):fade(css('--gen'),.35+i*.1625);
+  bars($('#barsWhere'),rows,{fmt:it=>fmt(it[1],0),color:wc});
+  bars($('#barsWhereRate'),rows.map(r=>[r[0],r[2]]),{fmt:it=>fmt(it[1],1),color:wc});
   $('#whereNote').textContent=`Escenario actual: ${fmt(S5.pG,1)}% · ${S5.fM}% · ${fmt(S5.fL,1)}%. Izquierda: siniestros evitados. Derecha: cada 1.000 vehículos observados.`;
   const tot=rows.reduce((a,r)=>a+r[1],0);
   $('#whereMsg').textContent=whereK=='tipo'?`En volumen, Particular concentra el ${fmt(rows[0][1]/tot*100)}% de la prevención. Por cada 1.000 vehículos, Carga aporta ${fmt(rows[1][2]/rows[0][2],1)} veces lo de Particular.`:`Los vehículos de más de 10 años concentran el ${fmt((rows[2][1]+rows[3][1]+rows[4][1])/tot*100)}% de los siniestros potencialmente evitados, y el aporte cada 1.000 vehículos crece con la edad.`}
