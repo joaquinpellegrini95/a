@@ -31,9 +31,10 @@
   /* resultado de la inspección: aprobado = verde · condicional = naranja · grave = rojo */
   --ok:#93D500; --pass:#93D500; --cond:#F28A1E; --rej:#D32F3A;
   /* tipos de vehículo */
-  --tP:#0C426F; --tC:#93D500; --tB:#7FB3DA;
-  --b0:var(--gen); --b1:var(--gen); --b2:#93D500; --b3:#0C426F; --b4:#0C426F; --b5:var(--gen); --b6:#93D500;
-  --b0i:#0C426F; --b1i:#0C426F; --b2i:#4A7400; --b3i:#4A7400; --b4i:#2A6BA0; --b5i:#0C426F; --b6i:#2A6BA0;
+  --tP:#0C426F; --tC:#F28A1E; --tB:#7A5AD1;
+  --b0:var(--gen); --b1:var(--gen); --b2:#93D500; --b3:#F28A1E; --b4:#7A5AD1; --b5:var(--gen); --b6:#93D500;
+  --b0i:#0C426F; --b1i:#0C426F; --b2i:#4A7400; --b3i:#B85C00; --b4i:#5B3FB5; --b5i:#0C426F; --b6i:#2A6BA0;
+  --grisLeve:#9AA9B8; --grisLeveInk:#5A6B7C;
   --on-b0:#FFFFFF; --on-b1:#FFFFFF; --on-b2:#FFFFFF; --on-b3:#FFFFFF; --on-b4:#FFFFFF; --on-b5:#FFFFFF; --on-b6:#FFFFFF;
   --hdr:var(--bg); --hdrInk:var(--ink);
   --accent:var(--ink); --accentInk:var(--ink); --onAccent:#FFFFFF;
@@ -50,9 +51,10 @@
   --q1:#1F5580; --q2:#32729F; --q3:#5A9BCB; --q4:#A5CCE8; --onq1:#FFFFFF; --onq2:#FFFFFF; --onq3:#0A2A47; --onq4:#0A2A47;
   --sevL:#FFD23F; --sevM:#FF9F43; --sevG:#FF6B6B; --ok:#93D500; --pass:#93D500; --cond:#FF9F43; --rej:#FF6B6B;
   --sevLi:#FFD23F; --sevMi:#FF9F43; --sevGi:#FF6B6B;
-  --tP:#8CC0EA; --tC:#93D500; --tB:#4F86B2;
-  --b2:#93D500; --b3:#A9CBE6; --b4:#A9CBE6; --b6:#93D500;
-  --b0i:#EAF2F8; --b1i:#EAF2F8; --b2i:#B7E64A; --b3i:#B7E64A; --b4i:#8CC0EA; --b5i:#EAF2F8; --b6i:#8CC0EA;
+  --tP:#8CC0EA; --tC:#FFA94D; --tB:#A78BFA;
+  --b2:#93D500; --b3:#FFA94D; --b4:#A78BFA; --b6:#93D500;
+  --b0i:#EAF2F8; --b1i:#EAF2F8; --b2i:#B7E64A; --b3i:#FFA94D; --b4i:#A78BFA; --b5i:#EAF2F8; --b6i:#8CC0EA;
+  --grisLeve:#9AA9B8; --grisLeveInk:#B7C4D0;
   --on-b0:#0A2A47; --on-b1:#0A2A47; --on-b2:#0A2A47; --on-b3:#0A2A47; --on-b4:#0A2A47; --on-b5:#0A2A47; --on-b6:#0A2A47;
   --accent:#93D500; --accentInk:#EAF2F8; --onAccent:#0A2A47;
   --inv:#0C426F; --invInk:#FFFFFF; --invNum:#93D500; --invNote:#C3D6E5;
@@ -826,7 +828,7 @@ body.flow .ov{padding-top:60px}
             <p class="lead">De <b>238.306</b> anomalías técnicas, así se distribuye la severidad:</p>
             <svg id="sevStack" viewBox="0 0 600 150" style="width:100%"></svg>
             <div class="grid3" style="margin-top:10px">
-              <div class="card"><div class="big" style="font-size:44px;color:var(--sevLi)">173.471</div><div>Leves · 72,8%</div></div>
+              <div class="card"><div class="big" style="font-size:44px;color:var(--grisLeveInk)">173.471</div><div>Leves · 72,8%</div></div>
               <div class="card"><div class="big" style="font-size:44px;color:var(--sevMi)">59.256</div><div>Moderadas · 24,9%</div></div>
               <div class="card"><div class="big" style="font-size:44px;color:var(--sevGi)">5.551</div><div>Graves · 2,3%</div></div>
             </div>
@@ -1390,7 +1392,7 @@ inits['2-4']=()=>{const s=$('#stackAcum');s.innerHTML='';const cols=[css('--mute
   bars($('#barsAcum'),D.acum,{color:(it,i)=>cols[i]})};
 
 /* ---------- SCENE 3 ---------- */
-inits['3-0']=()=>{const s=$('#sevStack');s.innerHTML='';const parts=[[72.8,css('--sevL'),'Leves'],[24.9,css('--sevM'),'Moderadas'],[2.3,css('--sevG'),'Graves']];let x=0;
+inits['3-0']=()=>{const s=$('#sevStack');s.innerHTML='';const parts=[[72.8,css('--grisLeve'),'Leves'],[24.9,css('--sevM'),'Moderadas'],[2.3,css('--sevG'),'Graves']];let x=0;
   parts.forEach((p,i)=>{const w=p[0]/100*600;const r=el('rect',{x,y:20,width:0,height:80,fill:p[1],style:'transition:width 1.1s'},s);setTimeout(()=>r.setAttribute('width',Math.max(w-2,4)),60+i*300);x+=w});
   el('path',{d:'M437 108 L437 120 L598 120 L598 108',fill:'none',stroke:css('--ink'),'stroke-width':2},s);
   const t=el('text',{x:517,y:142,'text-anchor':'middle',fill:css('--ink'),'font-size':17,'font-weight':700},s);t.textContent='64.807 M/G = 27,2%';
@@ -1437,7 +1439,7 @@ $('#curveLegend').innerHTML=SER.map(s=>`<button class="tbtn" data-s="${s[0]}" st
 $$('#curveLegend button').forEach(b=>b.onclick=()=>{series[b.dataset.s]=!series[b.dataset.s];drawCurve(true)});
 function drawCurve(anim=true){const s=$('#curve');s.innerHTML='';const X0=60,X1=740,Y0=320,Y1=20;const maxY=series.an?80:40;
   const X=a=>X0+(a-3)/(35-3)*(X1-X0),Y=v=>Y0-v/maxY*(Y0-Y1);
-  el('rect',{x:X(11.5),y:Y1,width:X(14.5)-X(11.5),height:Y0-Y1,fill:css('--b4'),opacity:.12},s);
+  el('rect',{x:X(11.5),y:Y1,width:X(14.5)-X(11.5),height:Y0-Y1,fill:css('--b4'),opacity:.2},s);
   const z=el('text',{x:X(13),y:Y1+16,'text-anchor':'middle',fill:css('--b4'),'font-size':14,'font-weight':700},s);z.textContent='Aceleración 12–14';
   for(let v=0;v<=maxY;v+=maxY/4){el('line',{x1:X0,x2:X1,y1:Y(v),y2:Y(v),stroke:css('--line')},s);const t=el('text',{x:X0-8,y:Y(v)+5,'text-anchor':'end',fill:css('--ink2'),'font-size':13},s);t.textContent=v}
   [3,5,10,15,20,25,30,35].forEach(a=>{const t=el('text',{x:X(a),y:Y0+22,'text-anchor':'middle',fill:css('--ink2'),'font-size':13},s);t.textContent=a==3?'0–3':a==35?'35+':a});
@@ -2325,7 +2327,7 @@ async function runActs(st,my){for(const a of st.act){if(my!==token)return;
   else if(a[0]=='hots'){(async()=>{const hs=[...document.querySelectorAll('.scene.on #anat g.hot')];for(let i=0;i<a[1]&&i<hs.length;i++){if(my!==token)return;hs[i].dispatchEvent(new MouseEvent('click',{bubbles:true}));await sleep(1800)}})()}
 }}
 function ui(){$('#vzPos').textContent='Paso '+(idx+1)+' de '+STEPS.length;$('#vzPlay').textContent=playing?'⏸':'▶';$('#vzProg').style.width=((idx+1)/STEPS.length*100)+'%'}
-async function goStep(i,autoplay){if(i<0||i>=STEPS.length)return;const my=++token;idx=i;audio.pause();ui();
+async function goStep(i,autoplay){if(i<0||i>=STEPS.length)return;const my=++token;idx=i;audio.pause();if(!autoplay){try{audio.removeAttribute('src');audio.load()}catch(e){}}ui();
   const st=STEPS[i];const moved=(cur!==st.s)||(tabState[cur]!==st.t);
   if(moved){go(st.s,st.t);await sleep(1100)}else await sleep(250);
   if(my!==token)return;
@@ -2353,6 +2355,15 @@ function startVoz(){if(started)return;started=true;setTimeout(()=>{playing=true;
 const mo=new MutationObserver(()=>{if(!document.getElementById('espera')){mo.disconnect();startVoz()}});
 mo.observe(document.body,{childList:true});
 document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#espPlay')){audio.src=AUD[0];audio.play().then(()=>{audio.pause();audio.currentTime=0}).catch(()=>{})}},true);
+/* El audio acompaña lo que se toca: barra de ruta, pestañas y accesos del inicio llevan la voz al paso que corresponde */
+const stepFor=(s,t)=>{let k=STEPS.findIndex(x=>x.s===s&&x.t===t);if(k<0)k=STEPS.findIndex(x=>x.s===s);return k};
+function syncToView(){if(idx<0||document.getElementById('espera'))return;const t=tabState[cur]||0,k=stepFor(cur,t);
+  if(k>=0&&!(STEPS[idx].s===cur&&STEPS[idx].t===t))goStep(k,playing)}
+document.addEventListener('click',e=>{const el=e.target.closest&&e.target.closest('.stop,.tab,#mini6 button');if(el)setTimeout(syncToView,0)});
+/* en celular, al deslizar con el dedo hasta otra sección, la voz también se traslada */
+let ug=false,stT;['touchstart','wheel'].forEach(ev=>addEventListener(ev,()=>{ug=true},{passive:true,capture:true}));
+addEventListener('scroll',()=>{if(!ug||!document.body.classList.contains('flow'))return;clearTimeout(stT);stT=setTimeout(()=>{ug=false;if(idx>=0&&!document.getElementById('espera')&&STEPS[idx].s!==cur){const k=STEPS.findIndex(x=>x.s===cur);if(k>=0)goStep(k,playing)}},700)},{passive:true});
+
 ui();
 })();
 </script>
