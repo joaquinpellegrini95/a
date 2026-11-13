@@ -366,7 +366,7 @@ input[type=number],select{font:inherit;padding:8px 10px;border-radius:6px;border
    en computadora se mantiene el recorrido horizontal original)
    ============================================================ */
 body.flow{height:auto;overflow-x:hidden;overflow-y:auto;background:var(--bg)}
-html:has(body.flow){height:auto}
+html.flow{height:auto}
 body.flow .app{display:block;height:auto;padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
 body.flow .top{position:sticky;top:0;z-index:30;padding:8px 14px;gap:8px;border-bottom:3px solid var(--brand)}
 body.flow .brand{gap:9px}
@@ -602,6 +602,23 @@ body.flow .ov{padding-top:60px}
 
 #vzBar{left:96px!important;transform:none!important}
 .ov{z-index:90!important}
+
+/* iPhone: márgenes seguros (muesca / isla dinámica / barra inferior) */
+.top{padding-left:max(28px,env(safe-area-inset-left))!important;padding-right:max(32px,env(safe-area-inset-right))!important}
+body.flow .top{padding-left:max(12px,env(safe-area-inset-left))!important;padding-right:max(12px,env(safe-area-inset-right))!important}
+body.flow .scene{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+/* respaldo para navegadores sin color-mix() (iOS anterior a 16.2): sin esto se perdían fondos y el resaltado */
+@supports not (background:color-mix(in srgb,red 50%,blue)){
+  .callout{background:rgba(147,213,0,.15)}
+  .vzhl{border-color:rgba(147,213,0,.9);background:rgba(147,213,0,.12);box-shadow:0 0 0 8px rgba(147,213,0,.15)}
+  .ok{background:rgba(147,213,0,.3)}.no{background:rgba(211,47,58,.14)}
+  #tLoc tbody tr.sel{background:rgba(147,213,0,.26)}
+  .cobwarn,.pend{background:var(--bg2)}
+}
+
+body.flow #vzBar .vzp{display:none}
+body.flow #vzBar button{width:32px;height:32px}
+#vzBar .vzp{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -2159,17 +2176,28 @@ addEventListener('keydown',e=>{if(e.target.matches('input,select'))return;if(e.k
 /* ---------- MODO VERTICAL (celular): scroll natural hacia abajo ---------- */
 /* Con ancho ≤ 900px las pantallas se apilan y se baja con el scroll natural. En computadora se mantiene el recorrido horizontal original. */
 const FLOWMQ=matchMedia('(max-width:900px)');
-let FLOW=false,spyIO=null,revealIO=null;
+let FLOW=false,spyIO=null,revealIO=null,cntIO=null;
 scenes.forEach((s,si)=>s._panels.forEach((p,ti)=>{p.dataset.title=s._tabs[ti]?s._tabs[ti].textContent:'';p.dataset.si=si;p.dataset.ti=ti;if(SKIP.has(si+'-'+ti))p.classList.add('skipped')}));
-function runAll(){scenes.forEach((s,si)=>s._panels.forEach((p,ti)=>{if(SKIP.has(si+'-'+ti))return;const f=inits[si+'-'+ti];if(f)f()}))}
+function runAll(){scenes.forEach((s,si)=>{const g=inits['s'+si];if(g)g();s._panels.forEach((p,ti)=>{if(SKIP.has(si+'-'+ti))return;const f=inits[si+'-'+ti];if(f)f()})})}
+/* Cifras con conteo animado: al terminar, siempre queda el valor real (en celular algunas animaciones no llegaban a correr) */
+const finalTxt=e=>fmt(+e.dataset.count,+(e.dataset.dec||0));
+function settle(root,ms=1900){setTimeout(()=>root.querySelectorAll('[data-count]').forEach(e=>{if(e.isConnected&&e.textContent!==finalTxt(e))e.textContent=finalTxt(e)}),ms)}
+function countIn(root){root.querySelectorAll('[data-count]').forEach(countUp);settle(root)}
 function setupFlow(){
   revealIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const p=e.target;revealIO.unobserve(p);
-    const f=inits[p.dataset.si+'-'+p.dataset.ti];if(f)f();p.querySelectorAll('[data-count]').forEach(countUp)}),{rootMargin:'0px 0px -10% 0px',threshold:.06});
+    const f=inits[p.dataset.si+'-'+p.dataset.ti];if(f)f();countIn(p)}),{rootMargin:'0px 0px -10% 0px',threshold:.06});
   scenes.forEach(s=>s._panels.forEach(p=>{if(!p.classList.contains('skipped'))revealIO.observe(p)}));
   spyIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const i=scenes.indexOf(e.target);if(i!=cur)mark(i)}),{rootMargin:'-42% 0px -52% 0px'});
-  scenes.forEach(s=>spyIO.observe(s))}
-function enterFlow(){FLOW=true;document.body.classList.add('flow');scenes.forEach(s=>s.classList.remove('left'));runAll();setupFlow()}
-function leaveFlow(){FLOW=false;[revealIO,spyIO].forEach(o=>o&&o.disconnect());document.body.classList.remove('flow');scrollTo(0,0);go(cur,tabState[cur])}
+  scenes.forEach(s=>spyIO.observe(s));
+  /* cifras que están fuera de las pestañas (inicio, cierre): cuentan al aparecer en pantalla */
+  cntIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cntIO.unobserve(e.target);countUp(e.target);settle(e.target.parentElement||e.target)}),{threshold:.2});
+  scenes.forEach(s=>s.querySelectorAll('[data-count]').forEach(e=>{if(!e.closest('.panel'))cntIO.observe(e)}));
+  /* red de seguridad: al terminar de deslizar, toda cifra visible o cercana queda con su valor final */
+  addEventListener('scroll',scrollSettle,{passive:true})}
+let scrollT=null;
+function scrollSettle(){clearTimeout(scrollT);scrollT=setTimeout(()=>{if(!FLOW)return;const h=innerHeight;document.querySelectorAll('[data-count]').forEach(e=>{const r=e.getBoundingClientRect();if(r.bottom>-h&&r.top<h*2&&e.textContent!==finalTxt(e)&&!e.__cnt)settle(e.parentElement||e,50)})},1200)}
+function enterFlow(){FLOW=true;document.documentElement.classList.add('flow');document.body.classList.add('flow');scenes.forEach(s=>s.classList.remove('left'));runAll();setupFlow()}
+function leaveFlow(){FLOW=false;[revealIO,spyIO,cntIO].forEach(o=>o&&o.disconnect());removeEventListener('scroll',scrollSettle);document.documentElement.classList.remove('flow');document.body.classList.remove('flow');scrollTo(0,0);go(cur,tabState[cur])}
 function applyMode(){if(FLOWMQ.matches&&!FLOW)enterFlow();else if(!FLOWMQ.matches&&FLOW)leaveFlow()}
 FLOWMQ.addEventListener?FLOWMQ.addEventListener('change',applyMode):FLOWMQ.addListener(applyMode);
 
@@ -2245,7 +2273,7 @@ function drawCover(){const g=cvGeo;if(!g.W)return;const c=cvx;c.setTransform(g.d
       if(a.tabOf!==undefined){const p=out[a.tabOf];a0=p.a1+a.tabFrom;a1=p.a1+a.tabTo;tab=true}else{a0=a.a0+off;a1=a.a1+off}
       out.push({a0,a1});
       c.beginPath();c.arc(0,0,a.r1,a0*D2R,a1*D2R,false);c.arc(0,0,a.r0,a1*D2R,a0*D2R,true);c.closePath();
-      if(tab||!c.createConicGradient){c.fillStyle=rgba(green,.95)}
+      if(tab){c.fillStyle=rgba(green,.95)}else if(!c.createConicGradient){const lg=c.createLinearGradient(-300,0,560,0);lg.addColorStop(0,rgba(blue,0));lg.addColorStop(.45,rgba(blue,.85));lg.addColorStop(1,rgba(green,.98));c.fillStyle=lg}
       else{const f=Math.min(1,(a1-a0)/360),gr=c.createConicGradient(a0*D2R,0,0);
         gr.addColorStop(0,rgba(blue,0));gr.addColorStop(f*.2,rgba(blue,.14));gr.addColorStop(f*.62,rgba(blue,.9));gr.addColorStop(f,rgba(green,.98));gr.addColorStop(Math.min(.998,f+.004),rgba(green,.98));gr.addColorStop(1,rgba(blue,0));c.fillStyle=gr}
       c.fill()})});
